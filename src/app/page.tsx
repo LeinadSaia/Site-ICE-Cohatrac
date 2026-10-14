@@ -13,39 +13,39 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      {/* 1. Header & Navbar Fixa com Suporte a Logo Oficial */}
+      {/* 1. Header & Navbar com Navegação em Flexbox */}
       <Navbar />
 
       <main>
-        {/* 2. Hero Section com Headline, Badges, CTAs e Quick Info Bar */}
+        {/* 2. Hero Section com Headline, Badges Oficiais e CTAs */}
         <Hero />
 
-        {/* 3. Sobre a Igreja, Nossa História desde 2002 e Selo Institucional */}
+        {/* 3. Sobre a Igreja — História desde 2002 no Cohatrac */}
         <AboutSection />
 
-        {/* 4. No Que Cremos (Os 5 Solas da Reforma + Artigos da Confissão da AICEB) */}
+        {/* 4. No Que Cremos — Os 5 Solas da Reforma */}
         <FaithSection />
 
-        {/* 5. Nossa Liderança Pastoral e Governo Eclesiástico */}
+        {/* 5. Liderança Pastoral e Governo Eclesiástico (Presbitério e Diaconato) */}
         <LeadershipSection />
 
-        {/* 6. Vida na Igreja — Departamentos e Ministérios */}
+        {/* 6. Departamentos e Ministérios (MCC, Cadetes, DELOM, Homens, Jovens) */}
         <MinistriesSection />
 
-        {/* 7. Programação Semanal dos Cultos */}
+        {/* 7. Programação dos Cultos e Atividades Semanais */}
         <ScheduleSection />
 
-        {/* 8. Sermões, Transmissões Ao Vivo e Player Interativo do YouTube */}
+        {/* 8. Sermões e Mensagens em Vídeo no YouTube */}
         <SermonsSection />
 
-        {/* 9. Dízimos e Ofertas com PIX Interativo (Cópia em 1 clique) */}
+        {/* 9. Dízimos e Ofertas — Chave PIX e QR Code */}
         <GivingSection />
 
-        {/* 10. Localização, "Planeje sua Visita" e Pedidos de Oração */}
+        {/* 10. Como Chegar & Localização no Cohatrac com Google Maps e WhatsApp */}
         <ContactSection />
       </main>
 
-      {/* 11. Rodapé Institucional Completo */}
+      {/* 11. Rodapé Institucional */}
       <Footer />
     </>
   );

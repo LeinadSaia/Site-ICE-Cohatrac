@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Book, ExternalLink, ShieldCheck, Heart } from "lucide-react";
+import { Book, ExternalLink, ShieldCheck, Heart, MessageCircle } from "lucide-react";
 import { YoutubeIcon, InstagramIcon } from "@/components/icons/SocialIcons";
 import { CHURCH_DATA } from "@/data/churchData";
 import styles from "./Footer.module.css";
@@ -15,10 +15,10 @@ export default function Footer() {
       <div className={styles.goldBar}></div>
 
       <div className="container">
-        <div className={styles.footerGrid}>
+        <div className={styles.footerFlex}>
           {/* Coluna 1: Logo & Dados da Igreja */}
           <div className={styles.brandCol}>
-            <div className={styles.footerLogoLink}>
+            <a href="#inicio" className={styles.footerLogoLink} aria-label="Voltar ao início">
               <div className={styles.logoBadge}>
                 {!logoError ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
@@ -39,16 +39,16 @@ export default function Footer() {
 
               <div className={styles.brandText}>
                 <span className={styles.brandTitle}>{CHURCH_DATA.name}</span>
-                <span className={styles.brandSubtitle}>Igreja Cristã Evangélica • AICEB</span>
+                <span className={styles.brandSubtitle}>Desde 2002 no Cohatrac</span>
               </div>
-            </div>
+            </a>
 
             <p className={styles.legalInfo}>
               <strong>{CHURCH_DATA.legalName}</strong>
               <br />
               CNPJ: {CHURCH_DATA.cnpj}
               <br />
-              Filiada à Aliança das Igrejas Cristãs Evangélicas do Brasil (fundada em 1947 no Maranhão).
+              Proclamando a soberania de Cristo e a autoridade das Escrituras Sagradas em São Luís - MA desde 2002.
             </p>
 
             <div className={styles.reputationBox}>
@@ -62,14 +62,14 @@ export default function Footer() {
             <h4 className={styles.footerHeading}>Navegação</h4>
             <ul className={styles.footerLinks}>
               <li><a href="#inicio">Página Inicial</a></li>
-              <li><a href="#sobre">Quem Somos & História</a></li>
-              <li><a href="#cremos">Confissão de Fé (5 Solas)</a></li>
+              <li><a href="#sobre">A Igreja & História</a></li>
+              <li><a href="#cremos">No Que Cremos (5 Solas)</a></li>
               <li><a href="#lideranca">Corpo Pastoral</a></li>
-              <li><a href="#ministerios">Ministérios & Departamentos</a></li>
+              <li><a href="#departamentos">Departamentos</a></li>
               <li><a href="#horarios">Programação dos Cultos</a></li>
-              <li><a href="#sermoes">Cultos no YouTube</a></li>
-              <li><a href="#contribua">Dízimos e Ofertas</a></li>
-              <li><a href="#contato">Planeje sua Visita</a></li>
+              <li><a href="#sermoes">Mensagens no YouTube</a></li>
+              <li><a href="#dizimos">Dízimos e Ofertas</a></li>
+              <li><a href="#localizacao">Localização & Contato</a></li>
             </ul>
           </div>
 
@@ -94,7 +94,7 @@ export default function Footer() {
                 aria-label="YouTube ICE Cohatrac"
               >
                 <YoutubeIcon size={20} />
-                <span>YouTube (+750 vídeos)</span>
+                <span>YouTube ({CHURCH_DATA.socials.youtubeCount})</span>
               </a>
 
               <a
@@ -109,6 +109,17 @@ export default function Footer() {
               </a>
 
               <a
+                href={CHURCH_DATA.socials.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialBtn}
+                aria-label="WhatsApp ICE Cohatrac"
+              >
+                <MessageCircle size={20} />
+                <span>WhatsApp Oficial</span>
+              </a>
+
+              <a
                 href={CHURCH_DATA.socials.linktree}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -116,7 +127,7 @@ export default function Footer() {
                 aria-label="Linktree ICE Cohatrac"
               >
                 <ExternalLink size={20} />
-                <span>Linktree Oficial</span>
+                <span>Linktree da Igreja</span>
               </a>
             </div>
           </div>

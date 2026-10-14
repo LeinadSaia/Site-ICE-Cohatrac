@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Award, Calendar, BookOpen, ShieldCheck } from "lucide-react";
+import { Award, Calendar, BookOpen, MapPin } from "lucide-react";
 import { CHURCH_DATA } from "@/data/churchData";
 import styles from "./AboutSection.module.css";
 
@@ -11,11 +11,11 @@ export default function AboutSection() {
   return (
     <section id="sobre" className={`section section-white ${styles.aboutSection}`}>
       <div className="container">
-        <div className={styles.aboutGrid}>
-          {/* Coluna 1: História e Identidade */}
+        <div className={styles.aboutFlex}>
+          {/* Coluna de Texto */}
           <div className={styles.textColumn}>
-            <span className="badge-blue">Nossa História & Vocação</span>
-            <h2 className={styles.heading}>Quem Somos: Nossa História e Identidade</h2>
+            <span className="badge-blue">Nossa História & Identidade</span>
+            <h2 className={styles.heading}>Uma comunidade firmada na fé e no amor cristão</h2>
 
             <p className={styles.leadText}>
               A <strong>{CHURCH_DATA.fullName}</strong> atua há mais de duas décadas
@@ -24,38 +24,37 @@ export default function AboutSection() {
             </p>
 
             <p className={styles.bodyText}>
-              Oficialmente organizada como pessoa jurídica em junho de 2002, somos uma
-              comunidade local filiada à <strong>AICEB (Aliança das Igrejas Cristãs Evangélicas do Brasil)</strong>,
-              denominação histórica fundada em 1947 no próprio estado do Maranhão.
+              Fundada em 2002, nossa igreja reúne famílias que compartilham a fé no Deus Triúno,
+              o compromisso com a pregação fiel das Sagradas Escrituras, o ensino bíblico sistemático
+              e a adoração solene e alegre.
             </p>
 
             <p className={styles.bodyText}>
-              Nossa identidade é marcada pelo compromisso inegociável com a exposição fiel das
-              Escrituras Sagradas, pelo ensino sistemático na Escola Bíblica Dominical, pelo
-              louvor congregacional reverente, pela comunhão fraterna entre as famílias e pelo
-              zelo missionário.
+              Aqui você encontra acolhimento para todas as idades: desde os pequenos no MCC
+              (Ministério Crescer com Cristo), aos adolescentes nos Cadetes a Jato, à mocidade
+              na Rede de Jovens, aos homens no Clube dos Homens e às mulheres no DELOM.
             </p>
 
-            {/* Selo Jurídico e Denominacional */}
-            <div className={styles.legalNotice}>
-              <ShieldCheck size={20} className={styles.legalIcon} />
+            {/* Informação Institucional */}
+            <div className={styles.legalInfoBox}>
+              <MapPin size={18} className={styles.legalIcon} />
               <div>
-                <strong>{CHURCH_DATA.legalName}</strong>
-                <span>CNPJ: {CHURCH_DATA.cnpj} • Filiada à AICEB desde a sua organização</span>
+                <strong>{CHURCH_DATA.fullName}</strong>
+                <span>{CHURCH_DATA.address.street} • Cohatrac / Parque Aurora</span>
               </div>
             </div>
           </div>
 
-          {/* Coluna 2: Selo Institucional da Logo & Pilares */}
+          {/* Coluna Visual e Pilares */}
           <div className={styles.cardColumn}>
-            {/* Espaço em Destaque para o Brasão / Logo Oficial com Fallback */}
+            {/* Brasão / Logo Oficial com Fallback */}
             <div className={styles.emblemCard}>
               <div className={styles.emblemFrame}>
                 {!logoError ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
                   <img
                     src="/assets/img/logo-ice-cohatrac.png"
-                    alt="Brasão Oficial ICE Cohatrac"
+                    alt="Logo ICE Cohatrac"
                     className={styles.emblemImg}
                     onError={() => setLogoError(true)}
                   />
@@ -63,53 +62,53 @@ export default function AboutSection() {
 
                 {logoError && (
                   <div className={styles.fallbackEmblem}>
-                    <BookOpen size={48} className={styles.fallbackIcon} />
+                    <BookOpen size={42} className={styles.fallbackIcon} />
                     <span className={styles.fallbackText}>ICE Cohatrac</span>
-                    <span className={styles.fallbackSub}>AICEB • Desde 2002</span>
+                    <span className={styles.fallbackSub}>Desde 2002</span>
                   </div>
                 )}
               </div>
 
               <div className={styles.emblemDescription}>
-                <h3>Igreja Cristã Evangélica</h3>
-                <p>Comunhão, Reverência e Fé Bíblica Reformada</p>
+                <h3>ICE Cohatrac</h3>
+                <p>Comunhão, Reverência e Ensino Bíblico</p>
               </div>
             </div>
 
-            {/* Cards de Estatísticas e Pilares */}
-            <div className={styles.pillarsGrid}>
-              <div className={styles.pillarCard}>
+            {/* Pilares em Flexbox */}
+            <div className={styles.pillarsFlex}>
+              <div className={styles.pillarItem}>
                 <div className={styles.pillarIcon}>
-                  <Calendar size={22} />
+                  <Calendar size={20} />
                 </div>
                 <div>
-                  <h4 className={styles.pillarTitle}>+24 Anos</h4>
+                  <h4 className={styles.pillarTitle}>Desde 2002</h4>
                   <p className={styles.pillarDesc}>
-                    Servindo à comunidade do Cohatrac e Parque Aurora (desde 2002).
+                    Mais de 24 anos anunciando a graça de Deus no Cohatrac.
                   </p>
                 </div>
               </div>
 
-              <div className={styles.pillarCard}>
+              <div className={styles.pillarItem}>
                 <div className={styles.pillarIcon}>
-                  <Award size={22} />
+                  <BookOpen size={20} />
                 </div>
                 <div>
-                  <h4 className={styles.pillarTitle}>Tradição AICEB</h4>
+                  <h4 className={styles.pillarTitle}>Ensino Bíblico Fiel</h4>
                   <p className={styles.pillarDesc}>
-                    Parte de uma aliança de igrejas evangélicas fundada em 1947.
+                    Exposição clara e fundamentada na Bíblia Sagrada.
                   </p>
                 </div>
               </div>
 
-              <div className={styles.pillarCard}>
+              <div className={styles.pillarItem}>
                 <div className={styles.pillarIcon}>
-                  <BookOpen size={22} />
+                  <Award size={20} />
                 </div>
                 <div>
-                  <h4 className={styles.pillarTitle}>Ensino Bíblico</h4>
+                  <h4 className={styles.pillarTitle}>Igreja Acolhedora</h4>
                   <p className={styles.pillarDesc}>
-                    Compromisso com a pregação expositiva e fidelidade doutrinária.
+                    Ambiente familiar e seguro para todas as gerações.
                   </p>
                 </div>
               </div>

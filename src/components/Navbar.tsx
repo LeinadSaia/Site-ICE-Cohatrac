@@ -13,38 +13,39 @@ export default function Navbar() {
     { label: "A Igreja", href: "#sobre" },
     { label: "No Que Cremos", href: "#cremos" },
     { label: "Liderança", href: "#lideranca" },
-    { label: "Ministérios", href: "#ministerios" },
+    { label: "Departamentos", href: "#departamentos" },
     { label: "Horários", href: "#horarios" },
     { label: "Mensagens", href: "#sermoes" },
-    { label: "Contribua", href: "#contribua" },
+    { label: "Dízimos", href: "#dizimos" },
+    { label: "Localização", href: "#localizacao" },
   ];
 
   return (
     <header className={styles.header}>
       <div className={`container ${styles.navContainer}`}>
-        {/* ESPAÇO OFICIAL DA LOGO ICE COHATRAC COM FALLBACK INTELIGENTE */}
+        {/* LOGO & IDENTIDADE ICE COHATRAC */}
         <a href="#inicio" className={styles.logoLink} aria-label="Página Inicial - ICE Cohatrac">
           <div className={styles.logoBadge}>
             {!logoError ? (
               /* eslint-disable-next-line @next/next/no-img-element */
               <img
                 src="/assets/img/logo-ice-cohatrac.png"
-                alt="Logo Igreja Cristã Evangélica em Cohatrac"
+                alt="Logo ICE Cohatrac"
                 className={styles.logoImg}
                 onError={() => setLogoError(true)}
               />
             ) : null}
 
             {logoError && (
-              <div className={styles.fallbackLogo} title="ICE Cohatrac - AICEB">
-                <Book className={styles.bibleIcon} size={24} />
+              <div className={styles.fallbackLogo} title="ICE Cohatrac">
+                <Book className={styles.bibleIcon} size={22} />
               </div>
             )}
           </div>
 
           <div className={styles.brandInfo}>
             <span className={styles.brandTitle}>ICE Cohatrac</span>
-            <span className={styles.brandSubtitle}>Igreja Cristã Evangélica • AICEB</span>
+            <span className={styles.brandSubtitle}>Desde 2002 no Cohatrac</span>
           </div>
         </a>
 
@@ -61,7 +62,7 @@ export default function Navbar() {
         <div className={styles.headerActions}>
           <a href="#sermoes" className={styles.liveButton}>
             <span className="pulse-dot"></span>
-            <Radio size={16} />
+            <Radio size={15} />
             <span>Cultos Online</span>
           </a>
 
@@ -73,7 +74,7 @@ export default function Navbar() {
             aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
@@ -99,7 +100,7 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="pulse-dot"></span>
-                <Radio size={16} />
+                <Radio size={15} />
                 <span>Assista Ao Vivo</span>
               </a>
             </nav>

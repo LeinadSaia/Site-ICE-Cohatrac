@@ -2,29 +2,20 @@
   border-bottom: 1px solid var(--ice-border);
 }
 
-.ministriesGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-@media (min-width: 640px) {
-  .ministriesGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .ministriesGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.ministriesFlex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
 }
 
 .ministryCard {
-  background-color: var(--ice-bg-card);
+  flex: 1 1 320px;
+  max-width: 375px;
+  background-color: #FFFFFF;
   border: 1px solid var(--ice-border);
-  border-radius: var(--radius-lg);
-  padding: 1.85rem;
+  border-radius: var(--radius-md);
+  padding: 1.65rem;
   display: flex;
   flex-direction: column;
   transition: all 0.25s ease;
@@ -32,77 +23,77 @@
 }
 
 .ministryCard:hover {
-  border-color: var(--ice-gold-primary);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
+  border-color: var(--ice-gold);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
 }
 
-.cardHeader {
+.cardTop {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.15rem;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
 }
 
 .iconCircle {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3.25rem;
-  height: 3.25rem;
-  background-color: var(--ice-blue-light);
-  border: 1px solid rgba(29, 91, 155, 0.25);
-  border-radius: var(--radius-md);
-  color: var(--ice-blue-royal);
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: var(--ice-blue-subtle);
+  border: 1px solid rgba(30, 92, 154, 0.15);
+  border-radius: var(--radius-sm);
+  color: var(--ice-blue-accent);
   flex-shrink: 0;
   transition: all 0.2s ease;
 }
 
 .ministryCard:hover .iconCircle {
-  background-color: var(--ice-gold-primary);
+  background-color: var(--ice-gold);
   color: #FFFFFF;
-  border-color: var(--ice-gold-primary);
+  border-color: var(--ice-gold);
 }
 
-.titleGroup {
+.titleInfo {
   display: flex;
   flex-direction: column;
 }
 
 .ministryTitle {
-  font-size: 1.15rem;
-  color: var(--ice-navy-dark);
+  font-size: 1.05rem;
+  color: var(--ice-navy);
   line-height: 1.3;
 }
 
 .ministrySubtitle {
-  font-size: 0.775rem;
-  font-weight: 600;
+  font-size: 0.725rem;
+  font-weight: 700;
   color: var(--ice-gold-hover);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-top: 0.2rem;
+  margin-top: 0.15rem;
 }
 
 .ministryDesc {
-  font-size: 0.925rem;
-  color: var(--ice-text-main);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--ice-text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
   flex-grow: 1;
 }
 
 .scheduleRow {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
+  gap: 0.45rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: var(--ice-blue-royal);
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--ice-bg-main);
+  color: var(--ice-blue-accent);
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--ice-border);
 }
 
 .scheduleIcon {
-  color: var(--ice-gold-primary);
+  color: var(--ice-gold);
 }

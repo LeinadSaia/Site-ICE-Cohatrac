@@ -2,108 +2,113 @@
   border-bottom: 1px solid var(--ice-border);
 }
 
-.aboutGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3.5rem;
-  align-items: center;
+.aboutFlex {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 @media (min-width: 1024px) {
-  .aboutGrid {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 4.5rem;
+  .aboutFlex {
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
   }
 }
 
 .textColumn {
+  flex: 1.15;
   display: flex;
   flex-direction: column;
 }
 
 .heading {
-  font-size: 2.35rem;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
-  color: var(--ice-navy-dark);
+  font-size: 2.2rem;
+  margin-top: 0.85rem;
+  margin-bottom: 1.25rem;
+  color: var(--ice-navy);
 }
 
 @media (max-width: 768px) {
   .heading {
-    font-size: 1.85rem;
+    font-size: 1.75rem;
   }
 }
 
 .leadText {
-  font-size: 1.15rem;
-  line-height: 1.75;
-  color: var(--ice-navy-dark);
-  margin-bottom: 1.25rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--ice-navy);
+  margin-bottom: 1rem;
   font-weight: 500;
 }
 
 .bodyText {
-  font-size: 1rem;
-  line-height: 1.75;
-  color: var(--ice-text-main);
-  margin-bottom: 1.25rem;
+  font-size: 0.975rem;
+  line-height: 1.7;
+  color: var(--ice-text-muted);
+  margin-bottom: 1rem;
 }
 
-.legalNotice {
+.legalInfoBox {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  background-color: var(--ice-blue-light);
-  border: 1px solid rgba(29, 91, 155, 0.2);
+  gap: 0.85rem;
+  background-color: var(--ice-blue-subtle);
+  border: 1px solid rgba(30, 92, 154, 0.15);
   border-radius: var(--radius-md);
-  padding: 1rem 1.25rem;
-  margin-top: 1rem;
+  padding: 0.85rem 1.15rem;
+  margin-top: 0.75rem;
 }
 
 .legalIcon {
-  color: var(--ice-blue-royal);
+  color: var(--ice-blue-accent);
   flex-shrink: 0;
 }
 
-.legalNotice strong {
+.legalInfoBox strong {
   display: block;
-  font-size: 0.9rem;
-  color: var(--ice-navy-dark);
+  font-size: 0.875rem;
+  color: var(--ice-navy);
 }
 
-.legalNotice span {
+.legalInfoBox span {
   font-size: 0.8rem;
   color: var(--ice-text-muted);
 }
 
-/* Coluna 2: Selo e Pilares */
+/* Coluna 2 */
 .cardColumn {
+  flex: 0.85;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .emblemCard {
-  background: linear-gradient(135deg, var(--ice-blue-primary) 0%, var(--ice-navy-dark) 100%);
-  border-radius: var(--radius-xl);
-  padding: 2.25rem;
+  background-color: var(--ice-navy);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
   text-align: center;
   color: #FFFFFF;
-  border: 2px solid var(--ice-gold-border);
-  box-shadow: var(--shadow-lg);
+  border: 1.5px solid var(--ice-gold-border);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .emblemFrame {
-  width: 7.5rem;
-  height: 7.5rem;
-  margin: 0 auto 1.25rem auto;
+  width: 6.5rem;
+  height: 6.5rem;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 2px solid var(--ice-gold-primary);
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 2px solid var(--ice-gold);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin-bottom: 1rem;
   box-shadow: var(--shadow-gold);
 }
 
@@ -118,84 +123,84 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--ice-gold-primary);
+  color: var(--ice-gold);
 }
 
 .fallbackIcon {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .fallbackText {
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #FFFFFF;
 }
 
 .fallbackSub {
   font-size: 0.65rem;
   text-transform: uppercase;
-  color: var(--ice-gold-primary);
+  color: var(--ice-gold);
   letter-spacing: 0.05em;
 }
 
 .emblemDescription h3 {
   color: #FFFFFF;
-  font-size: 1.35rem;
-  margin-bottom: 0.35rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .emblemDescription p {
-  color: var(--ice-gold-soft);
-  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.875rem;
 }
 
-/* Pilares */
-.pillarsGrid {
+/* Pilares Flexbox */
+.pillarsFlex {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.85rem;
 }
 
-.pillarCard {
+.pillarItem {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  background-color: var(--ice-bg-main);
+  gap: 0.85rem;
+  background-color: var(--ice-bg-page);
   border: 1px solid var(--ice-border);
   border-radius: var(--radius-md);
-  padding: 1.15rem 1.25rem;
+  padding: 1rem 1.15rem;
   transition: all 0.2s ease;
 }
 
-.pillarCard:hover {
+.pillarItem:hover {
   background-color: #FFFFFF;
-  border-color: var(--ice-gold-primary);
-  box-shadow: var(--shadow-md);
-  transform: translateX(4px);
+  border-color: var(--ice-gold);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(3px);
 }
 
 .pillarIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: var(--radius-md);
-  background-color: var(--ice-blue-light);
-  color: var(--ice-blue-royal);
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--ice-blue-subtle);
+  color: var(--ice-blue-accent);
   flex-shrink: 0;
 }
 
 .pillarTitle {
-  font-size: 1.05rem;
+  font-size: 0.975rem;
   font-weight: 700;
-  color: var(--ice-navy-dark);
-  margin-bottom: 0.2rem;
+  color: var(--ice-navy);
+  margin-bottom: 0.15rem;
 }
 
 .pillarDesc {
-  font-size: 0.875rem;
+  font-size: 0.825rem;
   color: var(--ice-text-muted);
-  line-height: 1.45;
+  line-height: 1.4;
 }

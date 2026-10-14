@@ -1,93 +1,68 @@
 .faithSection {
-  background: linear-gradient(180deg, var(--ice-blue-primary) 0%, var(--ice-navy-dark) 100%);
+  background-color: var(--ice-navy);
   border-bottom: 2px solid var(--ice-gold-border);
 }
 
-.solasWrapper {
-  margin-bottom: 4rem;
-}
-
-.solasHeader {
-  text-align: center;
-  margin-bottom: 2.25rem;
-}
-
-.solasTitle {
-  font-size: 1.65rem;
-  color: #FFFFFF;
-  margin-bottom: 0.35rem;
-}
-
-.solasSubtitle {
-  font-size: 0.95rem;
-  color: var(--ice-gold-soft);
-}
-
-.solasGrid {
-  display: grid;
-  grid-template-columns: 1fr;
+.solasFlex {
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.25rem;
-}
-
-@media (min-width: 640px) {
-  .solasGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .solasGrid {
-    grid-template-columns: repeat(5, 1fr);
-  }
+  justify-content: center;
 }
 
 .solaCard {
-  background-color: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-top: 4px solid var(--ice-gold-primary);
+  flex: 1 1 280px;
+  max-width: 380px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid var(--ice-gold);
   border-radius: var(--radius-md);
-  padding: 1.5rem 1.25rem;
+  padding: 1.5rem 1.35rem;
   display: flex;
   flex-direction: column;
   transition: all 0.25s ease;
-  backdrop-filter: blur(4px);
 }
 
 .solaCard:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-  border-color: var(--ice-gold-primary);
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-gold);
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: var(--ice-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
-.solaNumber {
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.solaNum {
   font-family: var(--font-serif);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--ice-gold-primary);
-  margin-bottom: 0.5rem;
+  color: var(--ice-gold);
+}
+
+.solaPt {
+  font-size: 0.725rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .solaLatin {
   font-family: var(--font-serif);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #FFFFFF;
-  margin-bottom: 0.25rem;
-}
-
-.solaPt {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--ice-gold-primary);
-  font-weight: 600;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.65rem;
 }
 
 .solaDesc {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 1.25rem;
   flex-grow: 1;
 }
@@ -98,125 +73,7 @@
   gap: 0.4rem;
   font-size: 0.775rem;
   font-weight: 600;
-  color: var(--ice-gold-soft);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 0.75rem;
-}
-
-/* Accordion Doutrinário */
-.articlesWrapper {
-  background-color: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(200, 155, 60, 0.3);
-  border-radius: var(--radius-xl);
-  padding: 2.5rem;
-  backdrop-filter: blur(8px);
-}
-
-@media (max-width: 768px) {
-  .articlesWrapper {
-    padding: 1.5rem;
-  }
-}
-
-.articlesHeader {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.articlesIconBox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.25rem;
-  height: 3.25rem;
-  background-color: rgba(200, 155, 60, 0.2);
-  border: 1px solid var(--ice-gold-primary);
-  border-radius: var(--radius-md);
-  color: var(--ice-gold-primary);
-  flex-shrink: 0;
-}
-
-.articlesTitle {
-  font-size: 1.45rem;
-  color: #FFFFFF;
-  margin-bottom: 0.25rem;
-}
-
-.articlesDesc {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.accordionContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-.accordionItem {
-  background-color: rgba(10, 30, 54, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  transition: all 0.2s ease;
-}
-
-.itemOpen {
-  border-color: var(--ice-gold-primary);
-  background-color: rgba(10, 30, 54, 0.85);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.accordionButton {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.15rem 1.35rem;
-  background: transparent;
-  border: none;
-  color: #FFFFFF;
-  cursor: pointer;
-  text-align: left;
-  font-family: inherit;
-}
-
-.accordionItemTitle {
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #FFFFFF;
-}
-
-.accordionChevron {
-  color: var(--ice-gold-primary);
-  display: flex;
-  align-items: center;
-  margin-left: 1rem;
-}
-
-.accordionContent {
-  padding: 0 1.35rem 1.35rem 1.35rem;
+  color: var(--ice-gold-light);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.articleText {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
-  margin-top: 1rem;
-  margin-bottom: 0.85rem;
-}
-
-.articleRef {
-  font-size: 0.85rem;
-  color: var(--ice-gold-soft);
-  background-color: rgba(200, 155, 60, 0.1);
-  border-left: 3px solid var(--ice-gold-primary);
-  padding: 0.5rem 0.85rem;
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding-top: 0.75rem;
 }

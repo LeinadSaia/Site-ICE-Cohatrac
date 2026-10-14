@@ -16,7 +16,7 @@ export default function GivingSection() {
   };
 
   return (
-    <section id="contribua" className={`section section-white ${styles.givingSection}`}>
+    <section id="dizimos" className={`section section-white ${styles.givingSection}`}>
       <div className="container">
         {/* Cabeçalho */}
         <div className="section-header">
@@ -24,42 +24,41 @@ export default function GivingSection() {
             <Heart size={14} />
             Dízimos e Ofertas
           </span>
-          <h2>Generosidade e Fidelidade ao Reino</h2>
+          <h2>Generosidade e Sustento da Obra</h2>
           <p>
-            O sustento da obra do Senhor, dos ministérios locais e do avanço missionário
-            é fruto da gratidão e amor voluntário do povo de Deus.
+            O sustento das atividades e o cuidado da casa de Deus são frutos da gratidão
+            voluntária do povo de Deus.
           </p>
         </div>
 
-        {/* Card de Destaque Bíblico */}
-        <div className={styles.verseCard}>
+        {/* Versículo Bíblico */}
+        <div className={styles.verseBox}>
           <blockquote className={styles.verseQuote}>
             &ldquo;{CHURCH_DATA.giving.verseText}&rdquo;
           </blockquote>
-          <cite className={styles.verseAuthor}>— {CHURCH_DATA.giving.verseRef}</cite>
+          <cite className={styles.verseRef}>— {CHURCH_DATA.giving.verseRef}</cite>
         </div>
 
-        {/* Card Principal do PIX */}
-        <div className={styles.pixContainer}>
-          <div className={styles.pixGrid}>
-            {/* Coluna 1: Dados do PIX e Botão Copiar */}
+        {/* Card Principal do PIX em Flexbox */}
+        <div className={styles.pixCard}>
+          <div className={styles.pixFlex}>
+            {/* Informações da Chave */}
             <div className={styles.pixInfoCol}>
-              <div className={styles.pixHeader}>
+              <div className={styles.pixBadgeRow}>
                 <span className={styles.pixTypeBadge}>Chave Oficial • {CHURCH_DATA.giving.pixKeyType}</span>
                 <span className={styles.pixSecurity}>
-                  <ShieldCheck size={16} />
-                  Conta Institucional da Igreja
+                  <ShieldCheck size={15} />
+                  Conta da Igreja
                 </span>
               </div>
 
-              <div className={styles.favorecidoBox}>
-                <span className={styles.favLabel}>Favorecido:</span>
+              <div className={styles.favorecidoBlock}>
+                <span className={styles.favLabel}>Favorecido</span>
                 <strong className={styles.favName}>{CHURCH_DATA.giving.beneficiary}</strong>
               </div>
 
-              {/* Caixa da Chave com Botão de Cópia */}
               <div className={styles.keyBox}>
-                <div className={styles.keyDisplay}>
+                <div className={styles.keyTextGroup}>
                   <span className={styles.keyLabel}>Chave PIX (CNPJ):</span>
                   <span className={styles.keyValue}>{CHURCH_DATA.giving.pixKey}</span>
                 </div>
@@ -72,12 +71,12 @@ export default function GivingSection() {
                 >
                   {copied ? (
                     <>
-                      <Check size={18} />
+                      <Check size={16} />
                       <span>Copiado!</span>
                     </>
                   ) : (
                     <>
-                      <Copy size={18} />
+                      <Copy size={16} />
                       <span>Copiar Chave</span>
                     </>
                   )}
@@ -86,24 +85,24 @@ export default function GivingSection() {
 
               {copied && (
                 <div className={styles.copySuccessAlert}>
-                  <Check size={16} />
-                  <span>Chave PIX copiada para a área de transferência! Cole no aplicativo do seu banco.</span>
+                  <Check size={15} />
+                  <span>Chave copiada com sucesso! Cole no app do seu banco.</span>
                 </div>
               )}
 
-              <p className={styles.pixInstructions}>
-                Você pode contribuir pelo seu aplicativo bancário usando a opção <strong>PIX Copia e Cola</strong> ou <strong>Chave CNPJ</strong>.
+              <p className={styles.pixHelp}>
+                Você pode utilizar a função <strong>PIX Chave CNPJ</strong> em qualquer aplicativo bancário.
               </p>
             </div>
 
-            {/* Coluna 2: QR Code Oficial com Fallback Inteligente */}
+            {/* QR Code com Fallback SVG */}
             <div className={styles.qrCol}>
-              <div className={styles.qrWrapper}>
+              <div className={styles.qrFrame}>
                 {!qrError ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
                   <img
                     src="/assets/img/qrcode-pix-ice.png"
-                    alt="QR Code PIX ICE Cohatrac"
+                    alt="QR Code PIX"
                     className={styles.qrImg}
                     onError={() => setQrError(true)}
                   />
@@ -111,16 +110,13 @@ export default function GivingSection() {
 
                 {qrError && (
                   <div className={styles.qrFallback}>
-                    <QrCode size={96} className={styles.qrIcon} />
+                    <QrCode size={80} className={styles.qrIcon} />
                     <span className={styles.qrFallbackText}>QR Code PIX</span>
-                    <span className={styles.qrFallbackSub}>{CHURCH_DATA.giving.pixKey}</span>
+                    <span className={styles.qrFallbackKey}>{CHURCH_DATA.giving.pixKey}</span>
                   </div>
                 )}
               </div>
-
-              <span className={styles.qrCaption}>
-                Aponte a câmera do aplicativo do seu banco
-              </span>
+              <span className={styles.qrSub}>Aponte a câmera do seu banco</span>
             </div>
           </div>
         </div>

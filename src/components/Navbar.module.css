@@ -2,61 +2,61 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--ice-border);
-  box-shadow: 0 2px 10px rgba(10, 30, 54, 0.04);
-  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(11, 29, 51, 0.04);
 }
 
 .navContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4.5rem;
+  height: 4.25rem;
 }
 
 .logoLink {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.75rem;
   text-decoration: none;
 }
 
 .logoBadge {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3.25rem;
-  height: 3.25rem;
-  background-color: var(--ice-blue-primary);
-  border: 2px solid rgba(200, 155, 60, 0.5);
-  border-radius: var(--radius-md);
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: var(--ice-navy);
+  border: 1.5px solid var(--ice-gold-border);
+  border-radius: var(--radius-sm);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
   flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.logoLink:hover .logoBadge {
+  transform: scale(1.04);
 }
 
 .logoImg {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 0.25rem;
+  padding: 0.2rem;
 }
 
 .fallbackLogo {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
-  color: var(--ice-gold-primary);
+  color: var(--ice-gold);
 }
 
 .bibleIcon {
-  color: var(--ice-gold-primary);
+  color: var(--ice-gold);
 }
 
 .brandInfo {
@@ -67,31 +67,31 @@
 .brandTitle {
   font-family: var(--font-serif);
   font-weight: 800;
-  font-size: 1.25rem;
-  letter-spacing: -0.02em;
-  color: var(--ice-navy-dark);
+  font-size: 1.15rem;
+  letter-spacing: -0.015em;
+  color: var(--ice-navy);
   line-height: 1.1;
   transition: color 0.2s ease;
 }
 
 .logoLink:hover .brandTitle {
-  color: var(--ice-blue-royal);
+  color: var(--ice-blue-accent);
 }
 
 .brandSubtitle {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   color: var(--ice-gold-hover);
   font-weight: 700;
-  margin-top: 0.2rem;
+  margin-top: 0.15rem;
 }
 
 /* Desktop Navigation */
 .desktopNav {
   display: none;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 @media (min-width: 1024px) {
@@ -101,16 +101,16 @@
 }
 
 .navLink {
-  font-size: 0.925rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--ice-text-main);
-  padding: 0.5rem 0.25rem;
+  color: var(--ice-text-dark);
+  padding: 0.4rem 0.2rem;
   position: relative;
   transition: color 0.2s ease;
 }
 
 .navLink:hover {
-  color: var(--ice-blue-royal);
+  color: var(--ice-blue-accent);
 }
 
 .navLink::after {
@@ -120,7 +120,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--ice-gold-primary);
+  background-color: var(--ice-gold);
   transition: width 0.2s ease;
 }
 
@@ -131,40 +131,40 @@
 .headerActions {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.75rem;
 }
 
 .liveButton {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.55rem 1.15rem;
-  font-size: 0.85rem;
+  gap: 0.45rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.825rem;
   font-weight: 700;
-  color: var(--ice-navy-dark);
-  background-color: var(--ice-gold-soft);
+  color: var(--ice-navy);
+  background-color: var(--ice-gold-light);
   border: 1px solid var(--ice-gold-border);
   border-radius: 9999px;
   transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .liveButton:hover {
-  background-color: var(--ice-gold-primary);
+  background-color: var(--ice-gold);
   color: #FFFFFF;
-  border-color: var(--ice-gold-primary);
+  border-color: var(--ice-gold);
   transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
 
 .mobileMenuButton {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem;
+  padding: 0.4rem;
   border: 1px solid var(--ice-border);
   border-radius: var(--radius-sm);
   background: transparent;
-  color: var(--ice-navy-dark);
+  color: var(--ice-navy);
   cursor: pointer;
 }
 
@@ -181,9 +181,10 @@
   left: 0;
   width: 100%;
   background-color: #FFFFFF;
-  border-bottom: 2px solid var(--ice-gold-primary);
-  box-shadow: var(--shadow-xl);
-  padding: 1.25rem 0 1.75rem 0;
+  border-bottom: 2px solid var(--ice-gold);
+  box-shadow: var(--shadow-lg);
+  padding: 1rem 0 1.5rem 0;
+  animation: fadeIn 0.25s ease-out;
 }
 
 @media (min-width: 1024px) {
@@ -195,25 +196,25 @@
 .mobileNav {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .mobileNavLink {
-  padding: 0.75rem 0.5rem;
-  font-size: 1.05rem;
+  padding: 0.65rem 0.5rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: var(--ice-navy-dark);
-  border-bottom: 1px solid var(--ice-bg-main);
+  color: var(--ice-navy);
+  border-bottom: 1px solid var(--ice-bg-page);
   transition: color 0.2s ease, padding-left 0.2s ease;
 }
 
 .mobileNavLink:hover {
-  color: var(--ice-blue-royal);
-  padding-left: 0.75rem;
+  color: var(--ice-blue-accent);
+  padding-left: 0.5rem;
 }
 
 .mobileLiveButton {
   margin-top: 0.75rem;
   justify-content: center;
-  padding: 0.85rem;
+  padding: 0.75rem;
 }

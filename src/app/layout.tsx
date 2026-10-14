@@ -5,14 +5,13 @@ import { CHURCH_DATA } from "@/data/churchData";
 export const metadata: Metadata = {
   title: "ICE Cohatrac — Igreja Cristã Evangélica em Cohatrac | São Luís - MA",
   description:
-    "Site oficial da Igreja Cristã Evangélica em Cohatrac (AICEB). Fundada em 2002 em São Luís - MA. Cultos dominicais, Escola Bíblica, sermões expositivos, vida comunitária e proclamação do Evangelho.",
+    "Site oficial da Igreja Cristã Evangélica em Cohatrac. Desde 2002 no Cohatrac, São Luís - MA. Cultos dominicais, Escola Bíblica, sermões expositivos, vida comunitária e proclamação do Evangelho.",
   keywords: [
     "ICE Cohatrac",
     "Igreja Cristã Evangélica",
-    "AICEB",
-    "Igreja em São Luís",
     "Cohatrac",
     "Parque Aurora",
+    "Igreja em São Luís",
     "Igreja Evangélica São Luís",
     "Escola Bíblica Dominical",
     "Culto ao Vivo",
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "ICE Cohatrac" }],
   creator: "Igreja Cristã Evangélica em Cohatrac",
-  publisher: "AICEB",
+  publisher: "ICE Cohatrac",
   robots: {
     index: true,
     follow: true,
@@ -32,13 +31,13 @@ export const metadata: Metadata = {
     url: "https://icecohatrac.com.br",
     title: "ICE Cohatrac — Igreja Cristã Evangélica em Cohatrac",
     description:
-      "Uma igreja família, firmada na Palavra e proclamando a Graça de Cristo em São Luís - MA. Conheça nossos cultos e ministérios.",
+      "Uma igreja família, firmada na Palavra e proclamando a Graça de Cristo em São Luís - MA desde 2002. Conheça nossos cultos e ministérios.",
     siteName: "ICE Cohatrac",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ICE Cohatrac — Igreja Cristã Evangélica",
-    description: "Igreja filiada à AICEB no Cohatrac e Parque Aurora, São Luís - MA.",
+    title: "ICE Cohatrac — Igreja Cristã Evangélica no Cohatrac",
+    description: "Desde 2002 no Cohatrac e Parque Aurora, São Luís - MA.",
   },
 };
 

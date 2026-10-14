@@ -1,244 +1,318 @@
 .contactSection {
   border-bottom: 1px solid var(--ice-border);
+  position: relative;
 }
 
-.contactGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+.locationFlex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: stretch;
+  justify-content: center;
 }
 
-@media (min-width: 1024px) {
-  .contactGrid {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 2.5rem;
-  }
-}
-
-/* Formulário com Abas */
-.formCard {
+/* Coluna 1: Informações */
+.infoCard {
+  flex: 1 1 420px;
+  max-width: 580px;
   background-color: #FFFFFF;
   border: 1px solid var(--ice-border);
   border-radius: var(--radius-xl);
-  overflow: hidden;
+  padding: 2.5rem;
   box-shadow: var(--shadow-md);
-}
-
-.tabsHeader {
   display: flex;
-  background-color: var(--ice-bg-main);
-  border-bottom: 1px solid var(--ice-border);
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.tabBtn {
-  flex: 1;
+.infoCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iconBadge {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 1.15rem 1rem;
-  font-size: 0.95rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: var(--radius-md);
+  background-color: var(--ice-blue-light);
+  color: var(--ice-blue-royal);
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(29, 91, 155, 0.15);
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--ice-navy-dark);
+  line-height: 1.2;
+}
+
+.cardSub {
+  font-size: 0.85rem;
+  color: var(--ice-gold-hover);
+  font-weight: 600;
+  display: block;
+  margin-top: 0.2rem;
+}
+
+/* Caixa de Endereço */
+.addressBox {
+  background-color: var(--ice-bg-main);
+  border-left: 4px solid var(--ice-gold-primary);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  position: relative;
+}
+
+.addressStreet {
+  font-size: 1.05rem;
   font-weight: 700;
+  color: var(--ice-navy-dark);
+  line-height: 1.35;
+}
+
+.addressNeighborhood {
+  font-size: 0.925rem;
+  color: var(--ice-text-main);
+}
+
+.addressCep {
+  font-size: 0.85rem;
   color: var(--ice-text-muted);
-  background: transparent;
-  border: none;
-  border-bottom: 3px solid transparent;
+  font-family: monospace;
+}
+
+.copyAddressBtn {
+  align-self: flex-start;
+  margin-top: 0.65rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #FFFFFF;
+  border: 1px solid var(--ice-border);
+  color: var(--ice-navy-dark);
+  font-size: 0.825rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: inherit;
 }
 
-.tabBtn:hover {
-  color: var(--ice-blue-royal);
-}
-
-.tabActive {
-  background-color: #FFFFFF;
-  color: var(--ice-navy-dark);
-  border-bottom-color: var(--ice-gold-primary);
-}
-
-.tabContent {
-  padding: 2.25rem;
-}
-
-@media (max-width: 640px) {
-  .tabContent {
-    padding: 1.5rem;
-  }
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.formGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.formGroup label {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--ice-navy-dark);
-}
-
-.input, .textarea, .select {
-  width: 100%;
-  padding: 0.85rem 1rem;
-  border: 1px solid var(--ice-border);
-  border-radius: var(--radius-sm);
-  font-size: 0.95rem;
-  font-family: inherit;
-  color: var(--ice-text-main);
-  background-color: var(--ice-bg-main);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.input:focus, .textarea:focus, .select:focus {
-  outline: none;
+.copyAddressBtn:hover {
   border-color: var(--ice-blue-royal);
-  background-color: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(29, 91, 155, 0.15);
-}
-
-.checkboxGroup {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.65rem;
-  margin-top: 0.25rem;
-  margin-bottom: 0.5rem;
-}
-
-.checkbox {
-  margin-top: 0.25rem;
-  accent-color: var(--ice-blue-royal);
-  width: 1.1rem;
-  height: 1.1rem;
-}
-
-.checkboxGroup label {
-  font-size: 0.85rem;
-  color: var(--ice-text-muted);
-  line-height: 1.45;
-}
-
-/* Sucesso */
-.successBox {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-.successIcon {
-  color: #16A34A;
-  margin-bottom: 1rem;
-}
-
-.successTitle {
-  font-size: 1.5rem;
-  color: var(--ice-navy-dark);
-  margin-bottom: 0.5rem;
-}
-
-.successMsg {
-  font-size: 1rem;
-  color: var(--ice-text-main);
-  max-width: 500px;
-  line-height: 1.6;
-  margin-bottom: 1.75rem;
-}
-
-.successActions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* Coluna 2: Localização e Mapa */
-.locationCard {
-  background-color: #FFFFFF;
-  border: 1px solid var(--ice-border);
-  border-radius: var(--radius-xl);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  box-shadow: var(--shadow-md);
-}
-
-.locationHeader {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  margin-bottom: 1.25rem;
-}
-
-.locationIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  background-color: var(--ice-blue-light);
-  border-radius: var(--radius-md);
   color: var(--ice-blue-royal);
-  flex-shrink: 0;
+  background-color: var(--ice-blue-light);
 }
 
-.locationTitle {
-  font-size: 1.35rem;
-  color: var(--ice-navy-dark);
+.checkIcon {
+  color: #16A34A;
 }
 
-.locationSub {
-  font-size: 0.85rem;
-  color: var(--ice-gold-hover);
-  font-weight: 600;
+/* Botões de Ação */
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
 }
 
-.addressBox {
-  background-color: var(--ice-bg-main);
-  border-left: 3px solid var(--ice-gold-primary);
-  padding: 1rem 1.25rem;
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  margin-bottom: 1.5rem;
+.fullBtn {
+  width: 100%;
+  justify-content: center;
 }
 
-.addressStreet {
+/* Resumo de Horários */
+.quickSchedule {
+  background-color: var(--ice-blue-light);
+  border: 1px solid rgba(29, 91, 155, 0.15);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.quickScheduleHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.clockIcon {
+  color: var(--ice-blue-royal);
+}
+
+.quickScheduleTitle {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--ice-navy-dark);
-  margin-bottom: 0.2rem;
 }
 
-.addressCity {
-  font-size: 0.875rem;
+.scheduleRowList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.scheduleRow {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  border-bottom: 1px dashed rgba(29, 91, 155, 0.15);
+  padding-bottom: 0.35rem;
+}
+
+.scheduleRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.scheduleDay {
+  color: var(--ice-navy-dark);
+}
+
+.scheduleEvent {
+  color: var(--ice-text-main);
+  font-size: 0.825rem;
+}
+
+/* Redes Sociais */
+.socialsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--ice-border);
+}
+
+.socialsLabel {
+  font-size: 0.825rem;
+  font-weight: 600;
   color: var(--ice-text-muted);
 }
 
-.addressCep {
-  font-size: 0.8rem;
-  color: var(--ice-text-muted);
-  font-family: monospace;
+.socialsFlex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
 }
 
-.mapFrameWrapper {
-  border-radius: var(--radius-md);
-  overflow: hidden;
+.socialTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  background-color: var(--ice-bg-main);
   border: 1px solid var(--ice-border);
-  margin-bottom: 1.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--ice-navy-dark);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.socialTag:hover {
+  background-color: var(--ice-blue-royal);
+  color: #FFFFFF;
+  border-color: var(--ice-blue-royal);
+  transform: translateY(-2px);
+}
+
+/* Coluna 2: Mapa */
+.mapCard {
+  flex: 1 1 500px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--ice-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  min-height: 520px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mapCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.mapTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: var(--ice-navy-dark);
+  color: #FFFFFF;
+}
+
+.mapBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.mapRating {
+  font-size: 0.8rem;
+  color: var(--ice-gold-primary);
+  font-weight: 600;
+}
+
+.mapContainer {
+  flex: 1;
+  min-height: 400px;
+  position: relative;
 }
 
 .mapIframe {
+  width: 100%;
+  height: 100%;
   display: block;
 }
 
-.routeBtnBox {
-  margin-top: auto;
+.mapBottomTip {
+  padding: 1.25rem 1.5rem;
+  background-color: var(--ice-bg-main);
+  border-top: 1px solid var(--ice-border);
+  font-size: 0.875rem;
+  color: var(--ice-text-muted);
+  line-height: 1.5;
+}
+
+.mapBottomTip strong {
+  color: var(--ice-navy-dark);
+}
+
+@media (max-width: 768px) {
+  .infoCard {
+    padding: 1.5rem;
+  }
+
+  .mapCard {
+    min-height: 420px;
+  }
+
+  .mapContainer {
+    min-height: 320px;
+  }
 }
