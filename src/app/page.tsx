@@ -23,7 +23,7 @@ export default function Home() {
         {/* 3. Sobre a Igreja — História desde 2002 no Cohatrac */}
         <AboutSection />
 
-        {/* 4. No Que Cremos — Os 5 Solas da Reforma */}
+        {/* 4. No Que Cremos — Confissão de Fé da AICEB em Gavetas Estruturadas */}
         <FaithSection />
 
         {/* 5. Liderança Pastoral e Governo Eclesiástico (Presbitério e Diaconato) */}

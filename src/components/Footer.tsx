@@ -46,7 +46,7 @@ export default function Footer() {
             <ul className={styles.footerLinks}>
               <li><a href="#inicio">Página Inicial</a></li>
               <li><a href="#sobre">A Igreja & História</a></li>
-              <li><a href="#cremos">No Que Cremos (5 Solas)</a></li>
+              <li><a href="#cremos">Confissão de Fé (AICEB)</a></li>
               <li><a href="#lideranca">Corpo Pastoral</a></li>
               <li><a href="#departamentos">Departamentos</a></li>
               <li><a href="#horarios">Programação dos Cultos</a></li>
