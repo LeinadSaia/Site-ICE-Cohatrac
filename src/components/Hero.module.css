@@ -1,0 +1,149 @@
+.heroSection {
+  position: relative;
+  background: linear-gradient(135deg, #0A1E36 0%, #12385F 50%, #0A1E36 100%);
+  color: #FFFFFF;
+  padding-top: 5.5rem;
+  padding-bottom: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(200, 155, 60, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(29, 91, 155, 0.25) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 4.5rem;
+}
+
+.badgeWrapper {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.goldDot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--ice-gold-primary);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.title {
+  font-size: 2.85rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.7;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* Quick Bar */
+.quickBar {
+  position: relative;
+  z-index: 10;
+  background-color: rgba(10, 30, 54, 0.85);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(200, 155, 60, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.25rem 0;
+}
+
+.quickGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .quickGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.quickItem {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.quickIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: rgba(29, 91, 155, 0.4);
+  border: 1px solid rgba(200, 155, 60, 0.4);
+  border-radius: var(--radius-md);
+  color: var(--ice-gold-primary);
+  flex-shrink: 0;
+}
+
+.quickText {
+  display: flex;
+  flex-direction: column;
+}
+
+.quickLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ice-gold-primary);
+  font-weight: 700;
+}
+
+.quickValue {
+  font-size: 0.875rem;
+  color: #FFFFFF;
+  font-weight: 500;
+  line-height: 1.35;
+}

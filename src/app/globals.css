@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* CORES PRINCIPAIS DA LOGO & IDENTIDADE ICE COHATRAC */
+  --ice-navy-dark: #0A1E36;     /* Azul Noite Profundo - Fundo do Rodapé, Hero Overlay e Textos */
+  --ice-blue-primary: #12385F;  /* Azul Marinho Institucional (Cor Principal da Marca / Cabeçalhos) */
+  --ice-blue-royal: #1D5B9B;    /* Azul Royal / Celeste AICEB (Botões Secundários, Ícones) */
+  --ice-blue-light: #EBF3FA;    /* Azul Claríssimo Suave (Fundo de Badges, Hover) */
+  --ice-blue-subtle: #F1F6FB;   /* Azul Acinzentado Ultra Suave */
+
+  /* CORES DE DESTAQUE (CRUZ / BÍBLIA / LUZ DA PALAVRA) */
+  --ice-gold-primary: #C89B3C;  /* Dourado Sóbrio / Âmbar Reformado */
+  --ice-gold-hover: #B08428;    /* Dourado Escuro para Hover */
+  --ice-gold-soft: #FDF8EC;     /* Creme Dourado Suave (Fundo de Versículos) */
+  --ice-gold-border: rgba(200, 155, 60, 0.35);
+
+  /* CORES NEUTRAS E DE SUPERFÍCIE */
+  --ice-bg-main: #F8FAFC;       /* Fundo Geral */
+  --ice-bg-card: #FFFFFF;       /* Branco Puro */
+  --ice-text-main: #1E293B;     /* Cinza Chumbo Escuro */
+  --ice-text-muted: #64748B;    /* Cinza Médio para Subtítulos */
+  --ice-text-light: #94A3B8;    /* Cinza Claro */
+  --ice-border: #E2E8F0;        /* Borda Padrão */
+
+  /* FONTES */
+  --font-serif: 'Merriweather', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* ELEVAÇÃO / SOMBRAS */
+  --shadow-sm: 0 1px 2px 0 rgba(10, 30, 54, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(10, 30, 54, 0.08), 0 2px 4px -2px rgba(10, 30, 54, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(10, 30, 54, 0.1), 0 4px 6px -4px rgba(10, 30, 54, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(10, 30, 54, 0.12), 0 8px 10px -6px rgba(10, 30, 54, 0.06);
+  --shadow-gold: 0 10px 25px -5px rgba(200, 155, 60, 0.3);
+
+  /* BORDER RADIUS */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--ice-bg-main);
+  color: var(--ice-text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Tipografia */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ice-navy-dark);
+}
+
+p {
+  color: var(--ice-text-main);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Layout container */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Badges e tags */
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: var(--ice-gold-soft);
+  color: var(--ice-gold-hover);
+  border: 1px solid var(--ice-gold-border);
+  border-radius: 9999px;
+}
+
+.badge-blue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: var(--ice-blue-light);
+  color: var(--ice-blue-royal);
+  border: 1px solid rgba(29, 91, 155, 0.2);
+  border-radius: 9999px;
+}
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid transparent;
+  text-align: center;
+}
+
+.btn-gold {
+  background-color: var(--ice-gold-primary);
+  color: var(--ice-navy-dark);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-gold:hover {
+  background-color: var(--ice-gold-hover);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px -4px rgba(176, 132, 40, 0.4);
+}
+
+.btn-blue {
+  background-color: var(--ice-blue-royal);
+  color: #FFFFFF;
+}
+
+.btn-blue:hover {
+  background-color: var(--ice-blue-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-outline-white:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-outline-blue {
+  background-color: transparent;
+  color: var(--ice-blue-royal);
+  border-color: var(--ice-blue-royal);
+}
+
+.btn-outline-blue:hover {
+  background-color: var(--ice-blue-light);
+  color: var(--ice-blue-primary);
+}
+
+/* Pulsing live dot */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #EF4444;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+}
+
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #EF4444;
+  animation: pulse-ring 1.8s infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+/* Seções de fundo alternadas */
+.section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+}
+
+.section-white {
+  background-color: var(--ice-bg-card);
+}
+
+.section-ice {
+  background-color: var(--ice-bg-main);
+}
+
+.section-navy {
+  background-color: var(--ice-blue-primary);
+  color: #FFFFFF;
+}
+
+.section-navy h2, 
+.section-navy h3, 
+.section-navy p {
+  color: #FFFFFF;
+}
+
+.section-navy-dark {
+  background-color: var(--ice-navy-dark);
+  color: #FFFFFF;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.section-header h2 {
+  font-size: 2.25rem;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+}
+
+.section-header p {
+  font-size: 1.05rem;
+  color: var(--ice-text-muted);
+}
+
+.section-navy .section-header p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Cards */
+.card-base {
+  background: var(--ice-bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--ice-border);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease-in-out;
+}
+
+.card-base:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+/* Toast de notificação */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--ice-navy-dark);
+  color: #FFFFFF;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--ice-gold-primary);
+  box-shadow: var(--shadow-xl);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  animation: slideInUp 0.3s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

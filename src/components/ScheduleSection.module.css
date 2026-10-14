@@ -1,0 +1,155 @@
+.scheduleSection {
+  border-bottom: 1px solid var(--ice-border);
+}
+
+.scheduleGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+  .scheduleGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .scheduleGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.scheduleCard {
+  background-color: var(--ice-bg-main);
+  border: 1px solid var(--ice-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.scheduleCard:hover {
+  background-color: #FFFFFF;
+  border-color: var(--ice-blue-royal);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.mainCard {
+  background: linear-gradient(145deg, #FFFFFF 0%, var(--ice-blue-light) 100%);
+  border: 2px solid var(--ice-gold-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.mainBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ice-navy-dark);
+  background-color: var(--ice-gold-soft);
+  border: 1px solid var(--ice-gold-border);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+
+.liveIcon {
+  color: #EF4444;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.dayLabel {
+  font-size: 0.825rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ice-blue-royal);
+}
+
+.timeTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ice-navy-dark);
+  background-color: rgba(18, 56, 95, 0.08);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+.scheduleTitle {
+  font-size: 1.2rem;
+  color: var(--ice-navy-dark);
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.scheduleDesc {
+  font-size: 0.9rem;
+  color: var(--ice-text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.cardFooter {
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.locationSnippet {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--ice-text-muted);
+}
+
+/* Banner de boas-vindas */
+.welcomeBanner {
+  background: linear-gradient(135deg, var(--ice-navy-dark) 0%, var(--ice-blue-primary) 100%);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--ice-gold-border);
+  padding: 2.25rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  color: #FFFFFF;
+  box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+  .welcomeBanner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.bannerContent h3 {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+
+.bannerContent p {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 650px;
+  font-size: 0.975rem;
+}

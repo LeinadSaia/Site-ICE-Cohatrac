@@ -1,0 +1,221 @@
+.footer {
+  background-color: var(--ice-navy-dark);
+  color: #FFFFFF;
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.goldBar {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ice-gold-hover) 0%, var(--ice-gold-primary) 50%, var(--ice-gold-hover) 100%);
+  margin-bottom: 4rem;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .footerGrid {
+    grid-template-columns: 1.3fr 0.9fr 1.2fr;
+  }
+}
+
+.brandCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerLogoLink {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.logoBadge {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-md);
+  background-color: var(--ice-blue-primary);
+  border: 2px solid var(--ice-gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.logoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.25rem;
+}
+
+.fallbackLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ice-gold-primary);
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandTitle {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.1;
+}
+
+.brandSubtitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ice-gold-primary);
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.legalInfo {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.legalInfo strong {
+  color: #FFFFFF;
+}
+
+.reputationBox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--ice-gold-soft);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(200, 155, 60, 0.2);
+  align-self: flex-start;
+}
+
+.repIcon {
+  color: var(--ice-gold-primary);
+}
+
+/* Coluna de Links */
+.footerHeading {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footerHeading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2rem;
+  height: 2px;
+  background-color: var(--ice-gold-primary);
+}
+
+.footerLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footerLinks a {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footerLinks a:hover {
+  color: var(--ice-gold-primary);
+  transform: translateX(4px);
+}
+
+/* Coluna de Contato & Social */
+.addressText {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.socialButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.socialBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.2s ease;
+}
+
+.socialBtn:hover {
+  background-color: rgba(200, 155, 60, 0.15);
+  border-color: var(--ice-gold-primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Bottom Bar */
+.bottomBar {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.825rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (min-width: 768px) {
+  .bottomBar {
+    flex-direction: row;
+  }
+}
+
+.motto {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--ice-gold-soft);
+  font-size: 0.9rem;
+}
+
+.mottoHeart {
+  color: var(--ice-gold-primary);
+}

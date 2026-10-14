@@ -1,0 +1,221 @@
+.sermonsSection {
+  background-color: var(--ice-navy-dark);
+  border-bottom: 2px solid var(--ice-gold-border);
+}
+
+.playerContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .playerContainer {
+    grid-template-columns: 1.6fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Coluna 1: Player */
+.mainVideoColumn {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.iframeWrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  background-color: #000000;
+}
+
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.activeVideoDetails {
+  padding: 1.75rem;
+}
+
+.detailsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.activeBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ice-gold-primary);
+  background-color: rgba(200, 155, 60, 0.15);
+  border: 1px solid var(--ice-gold-border);
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+}
+
+.durationTag {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.activeTitle {
+  font-size: 1.4rem;
+  color: #FFFFFF;
+  margin-bottom: 0.85rem;
+  line-height: 1.35;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Coluna 2: Playlist */
+.playlistColumn {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+}
+
+.playlistHeader {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.playlistHeader h4 {
+  font-size: 1.1rem;
+  color: #FFFFFF;
+}
+
+.playlistHeader span {
+  font-size: 0.775rem;
+  color: var(--ice-gold-soft);
+}
+
+.videoList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.videoCardBtn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.videoCardBtn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(200, 155, 60, 0.4);
+  transform: translateX(4px);
+}
+
+.cardActive {
+  background-color: rgba(29, 91, 155, 0.35);
+  border-color: var(--ice-gold-primary);
+  box-shadow: 0 0 12px rgba(200, 155, 60, 0.25);
+}
+
+.thumbnailBox {
+  width: 4.5rem;
+  height: 3.25rem;
+  background-color: rgba(10, 30, 54, 0.8);
+  border: 1px solid rgba(200, 155, 60, 0.3);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--ice-gold-primary);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.playOverlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ytTag {
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.videoCardInfo {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.videoCardTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.3;
+  margin-bottom: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.videoCardPreacher {
+  font-size: 0.775rem;
+  color: var(--ice-gold-soft);
+}
+
+.videoCardDate {
+  font-size: 0.725rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.channelLinkBox {
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
