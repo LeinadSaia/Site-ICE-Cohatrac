@@ -45,6 +45,28 @@ export interface ScheduleItem {
   isMain?: boolean;
 }
 
+export interface ChurchEvent {
+  id: string;
+  title: string;
+  date: string;
+  dayBadge: string;
+  monthBadge: string;
+  time: string;
+  location: string;
+  category: string;
+  daysRemaining?: number;
+  description: string;
+}
+
+export interface Bulletin {
+  title: string;
+  month: string;
+  year: number;
+  headline: string;
+  summary: string;
+  prayerFocus: string;
+}
+
 export const CHURCH_DATA = {
   name: "ICE Cohatrac",
   fullName: "Igreja Cristã Evangélica em Cohatrac",
@@ -306,5 +328,51 @@ export const CHURCH_DATA = {
       passage: "Vida Cristã Prática",
       duration: "1h 40m"
     }
-  ] as SermonVideo[]
+  ] as SermonVideo[],
+
+  bulletin: {
+    title: "Boletim Informativo",
+    month: "Outubro",
+    year: 2026,
+    headline: "Mês da Reforma Protestante & Firmeza na Fé",
+    summary: "Escalas ministeriais dos cultos de domingo, avisos dos departamentos, aniversariantes do mês e compromissos da igreja local.",
+    prayerFocus: "Oração pelas famílias da comunidade, pelos enfermos, pelo crescimento bíblico das crianças na EBD e pelos campos missionários da AICEB."
+  } as Bulletin,
+
+  events: [
+    {
+      id: "ev-1",
+      title: "Conferência Bíblica: A Fé que Transforma",
+      date: "24 a 25 de Outubro",
+      dayBadge: "24",
+      monthBadge: "OUT",
+      time: "Sábado às 19h00 • Domingo às 18h00",
+      location: "Templo Sede • Cohatrac",
+      category: "Conferência",
+      daysRemaining: 10,
+      description: "Dois dias dedicados ao estudo expositivo das Escrituras, louvor congregacional e comunhão com convidados da AICEB."
+    },
+    {
+      id: "ev-2",
+      title: "Ensaio Geral do Coral ICE Cohatrac & Encontro de Louvor",
+      date: "Sábado às 17h00",
+      dayBadge: "SÁB",
+      monthBadge: "SEM",
+      time: "17h00 às 19h00",
+      location: "Nave do Templo",
+      category: "Música Sacra",
+      description: "Preparação dos hinos históricos e cânticos espirituais para os cultos dominicais e encontros da aliança."
+    },
+    {
+      id: "ev-3",
+      title: "Culto Solene da Ceia do Senhor & Ações de Graças",
+      date: "Primeiro Domingo do Mês",
+      dayBadge: "DOM",
+      monthBadge: "MÊS",
+      time: "18h00 às 20h30",
+      location: "Templo Sede",
+      category: "Ordenança Bíblica",
+      description: "Momento solene de celebração da Ceia, memorial do sacrifício de Cristo na cruz e comunhão entre os irmãos."
+    }
+  ] as ChurchEvent[]
 };
