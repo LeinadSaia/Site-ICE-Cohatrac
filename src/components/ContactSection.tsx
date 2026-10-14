@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { MapPin, Navigation, MessageCircle, Copy, Check, Clock, ExternalLink } from "lucide-react";
+import { MapPin, Navigation, Copy, Check, Clock, ExternalLink } from "lucide-react";
 import { YoutubeIcon, InstagramIcon } from "@/components/icons/SocialIcons";
 import { CHURCH_DATA } from "@/data/churchData";
 import styles from "./ContactSection.module.css";
@@ -75,7 +75,7 @@ export default function ContactSection() {
               </button>
             </div>
 
-            {/* Ações Primárias: Rota no Google Maps e WhatsApp */}
+            {/* Ações Primárias: Rota no Google Maps e Instagram */}
             <div className={styles.actionButtons}>
               <a
                 href={CHURCH_DATA.address.mapsUrl}
@@ -88,13 +88,13 @@ export default function ContactSection() {
               </a>
 
               <a
-                href={CHURCH_DATA.socials.whatsapp}
+                href={CHURCH_DATA.socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`btn btn-blue ${styles.fullBtn}`}
               >
-                <MessageCircle size={18} />
-                <span>Falar Conosco no WhatsApp</span>
+                <InstagramIcon size={18} />
+                <span>Acompanhe no Instagram @icecohatrac</span>
               </a>
             </div>
 
@@ -116,7 +116,7 @@ export default function ContactSection() {
                 </div>
                 <div className={styles.scheduleRow}>
                   <strong className={styles.scheduleDay}>Sexta-feira</strong>
-                  <span className={styles.scheduleEvent}>19h30 (Departamentos: Homens, DELOM, Cadetes)</span>
+                  <span className={styles.scheduleEvent}>19h30 (Departamentos: Homens, DLOM, Cadetes)</span>
                 </div>
                 <div className={styles.scheduleRow}>
                   <strong className={styles.scheduleDay}>Sábado</strong>

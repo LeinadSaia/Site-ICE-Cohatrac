@@ -1,14 +1,11 @@
-"use client";
-
-import React, { useState } from "react";
-import { Book, ExternalLink, ShieldCheck, Heart, MessageCircle } from "lucide-react";
+import React from "react";
+import { ExternalLink, ShieldCheck, Heart } from "lucide-react";
 import { YoutubeIcon, InstagramIcon } from "@/components/icons/SocialIcons";
+import ChurchEmblem from "@/components/ChurchEmblem";
 import { CHURCH_DATA } from "@/data/churchData";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
-  const [logoError, setLogoError] = useState(false);
-
   return (
     <footer className={styles.footer}>
       {/* Barra Dourada Superior */}
@@ -20,21 +17,7 @@ export default function Footer() {
           <div className={styles.brandCol}>
             <a href="#inicio" className={styles.footerLogoLink} aria-label="Voltar ao início">
               <div className={styles.logoBadge}>
-                {!logoError ? (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <img
-                    src="/assets/img/logo-ice-cohatrac.png"
-                    alt="Logo ICE Cohatrac"
-                    className={styles.logoImg}
-                    onError={() => setLogoError(true)}
-                  />
-                ) : null}
-
-                {logoError && (
-                  <div className={styles.fallbackLogo}>
-                    <Book size={28} />
-                  </div>
-                )}
+                <ChurchEmblem size={44} />
               </div>
 
               <div className={styles.brandText}>
@@ -48,7 +31,7 @@ export default function Footer() {
               <br />
               CNPJ: {CHURCH_DATA.cnpj}
               <br />
-              Proclamando a soberania de Cristo e a autoridade das Escrituras Sagradas em São Luís - MA desde 2002.
+              Proclamando a soberania de Cristo e a fidelidade das Escrituras Sagradas em São Luís - MA.
             </p>
 
             <div className={styles.reputationBox}>
@@ -73,7 +56,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Coluna 3: Endereço & Redes Oficiais */}
+          {/* Coluna 3: Endereço & Redes Oficiais (Instagram em Destaque) */}
           <div className={styles.contactCol}>
             <h4 className={styles.footerHeading}>Onde Nos Encontrar</h4>
             <p className={styles.addressText}>
@@ -84,8 +67,19 @@ export default function Footer() {
               {CHURCH_DATA.address.city} - {CHURCH_DATA.address.state} • CEP {CHURCH_DATA.address.cep}
             </p>
 
-            <h4 className={styles.footerHeading} style={{ marginTop: "1.5rem" }}>Canais Oficiais</h4>
+            <h4 className={styles.footerHeading} style={{ marginTop: "1.75rem" }}>Canais Oficiais</h4>
             <div className={styles.socialButtons}>
+              <a
+                href={CHURCH_DATA.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${styles.socialBtn} ${styles.instagramPrimaryBtn}`}
+                aria-label="Instagram ICE Cohatrac"
+              >
+                <InstagramIcon size={20} />
+                <span>Instagram @icecohatrac</span>
+              </a>
+
               <a
                 href={CHURCH_DATA.socials.youtube}
                 target="_blank"
@@ -95,28 +89,6 @@ export default function Footer() {
               >
                 <YoutubeIcon size={20} />
                 <span>YouTube ({CHURCH_DATA.socials.youtubeCount})</span>
-              </a>
-
-              <a
-                href={CHURCH_DATA.socials.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialBtn}
-                aria-label="Instagram ICE Cohatrac"
-              >
-                <InstagramIcon size={20} />
-                <span>Instagram @icecohatrac</span>
-              </a>
-
-              <a
-                href={CHURCH_DATA.socials.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialBtn}
-                aria-label="WhatsApp ICE Cohatrac"
-              >
-                <MessageCircle size={20} />
-                <span>WhatsApp Oficial</span>
               </a>
 
               <a

@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Award, Calendar, BookOpen, MapPin } from "lucide-react";
+import ChurchEmblem from "@/components/ChurchEmblem";
 import { CHURCH_DATA } from "@/data/churchData";
 import styles from "./AboutSection.module.css";
 
 export default function AboutSection() {
-  const [logoError, setLogoError] = useState(false);
-
   return (
     <section id="sobre" className={`section section-white ${styles.aboutSection}`}>
       <div className="container">
@@ -32,7 +31,7 @@ export default function AboutSection() {
             <p className={styles.bodyText}>
               Aqui você encontra acolhimento para todas as idades: desde os pequenos no MCC
               (Ministério Crescer com Cristo), aos adolescentes nos Cadetes a Jato, à mocidade
-              na Rede de Jovens, aos homens no Clube dos Homens e às mulheres no DELOM.
+              na Rede de Jovens, aos homens no Clube dos Homens e às mulheres no DLOM.
             </p>
 
             {/* Informação Institucional */}
@@ -47,31 +46,16 @@ export default function AboutSection() {
 
           {/* Coluna Visual e Pilares */}
           <div className={styles.cardColumn}>
-            {/* Brasão / Logo Oficial com Fallback */}
+            {/* Brasão / Emblema Vetorial Oficial */}
             <div className={styles.emblemCard}>
               <div className={styles.emblemFrame}>
-                {!logoError ? (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <img
-                    src="/assets/img/logo-ice-cohatrac.png"
-                    alt="Logo ICE Cohatrac"
-                    className={styles.emblemImg}
-                    onError={() => setLogoError(true)}
-                  />
-                ) : null}
-
-                {logoError && (
-                  <div className={styles.fallbackEmblem}>
-                    <BookOpen size={42} className={styles.fallbackIcon} />
-                    <span className={styles.fallbackText}>ICE Cohatrac</span>
-                    <span className={styles.fallbackSub}>Desde 2002</span>
-                  </div>
-                )}
+                <ChurchEmblem size={84} />
               </div>
 
               <div className={styles.emblemDescription}>
                 <h3>ICE Cohatrac</h3>
                 <p>Comunhão, Reverência e Ensino Bíblico</p>
+                <span className={styles.badgeDesde}>Desde 2002 no Cohatrac</span>
               </div>
             </div>
 

@@ -29,7 +29,7 @@ export default function Home() {
         {/* 5. Liderança Pastoral e Governo Eclesiástico (Presbitério e Diaconato) */}
         <LeadershipSection />
 
-        {/* 6. Departamentos e Ministérios (MCC, Cadetes, DELOM, Homens, Jovens) */}
+        {/* 6. Departamentos e Ministérios (MCC, Cadetes, DLOM, Homens, Jovens) */}
         <MinistriesSection />
 
         {/* 7. Programação dos Cultos e Atividades Semanais */}
@@ -41,7 +41,7 @@ export default function Home() {
         {/* 9. Dízimos e Ofertas — Chave PIX e QR Code */}
         <GivingSection />
 
-        {/* 10. Como Chegar & Localização no Cohatrac com Google Maps e WhatsApp */}
+        {/* 10. Como Chegar & Localização no Cohatrac com Google Maps e Instagram */}
         <ContactSection />
       </main>
 

@@ -68,8 +68,7 @@ export const CHURCH_DATA = {
     youtubeCount: "+750 transmissões e mensagens",
     instagram: "https://www.instagram.com/icecohatrac/",
     instagramHandle: "@icecohatrac",
-    linktree: "https://linktr.ee/Icecohatrac",
-    whatsapp: "https://wa.me/5598988000000?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20ICE%20Cohatrac."
+    linktree: "https://linktr.ee/Icecohatrac"
   },
 
   giving: {
@@ -107,7 +106,7 @@ export const CHURCH_DATA = {
       day: "Sexta-feira",
       time: "19h30",
       title: "Encontros de Departamentos",
-      description: "Reuniões simultâneas: Clube dos Homens, DELOM (Mulheres) e Cadetes a Jato (Adolescentes)."
+      description: "Reuniões simultâneas: Clube dos Homens, DLOM (Mulheres) e Cadetes a Jato (Adolescentes)."
     },
     {
       day: "Sábado",
@@ -199,8 +198,8 @@ export const CHURCH_DATA = {
       icon: "Shield"
     },
     {
-      id: "delom",
-      title: "DELOM",
+      id: "dlom",
+      title: "DLOM",
       subtitle: "Departamento Local de Mulheres",
       description: "Círculo de mulheres dedicado à oração fervorosa, edificação espiritual mútua e serviço amoroso na casa de Deus.",
       schedule: "Sextas-feiras às 19h30",

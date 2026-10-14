@@ -3,20 +3,28 @@
 :root {
   /* CORES REAIS E INSTITUCIONAIS DA ICE COHATRAC */
   --ice-navy: #0B1D33;          /* Azul Noite Profundo e Elegante */
+  --ice-navy-dark: #0B1D33;     /* Alias para compatibilidade */
   --ice-blue-mid: #14355A;      /* Azul Marinho Nobre */
+  --ice-blue-primary: #14355A;  /* Alias */
   --ice-blue-accent: #1E5C9A;   /* Azul Real Vibrante */
+  --ice-blue-royal: #1E5C9A;    /* Alias */
   --ice-blue-subtle: #F0F5FA;   /* Azul Gelo Limpo */
+  --ice-blue-light: #F0F5FA;    /* Alias */
   
   /* DOURADO SÓBRIO / ÂMBAR REFORMADO */
   --ice-gold: #C6922C;          /* Ouro Nobre Sóbrio */
+  --ice-gold-primary: #C6922C;  /* Alias */
   --ice-gold-hover: #AF7E21;    /* Ouro Escuro para Hover */
   --ice-gold-light: #FFF9ED;    /* Creme Claro */
+  --ice-gold-soft: #FFF9ED;     /* Alias */
   --ice-gold-border: rgba(198, 146, 44, 0.3);
 
   /* SUPERFÍCIES E FUNDO */
   --ice-bg-page: #F8FAFC;       /* Fundo da Página Limpo */
+  --ice-bg-main: #F8FAFC;       /* Alias */
   --ice-bg-white: #FFFFFF;      /* Branco Puro */
   --ice-text-dark: #0F172A;     /* Cinza Quase Preto de Leitura Confortável */
+  --ice-text-main: #0F172A;     /* Alias */
   --ice-text-muted: #475569;    /* Cinza Neutro para Textos Secundários */
   --ice-border: #E2E8F0;        /* Borda Neutra e Limpa */
 

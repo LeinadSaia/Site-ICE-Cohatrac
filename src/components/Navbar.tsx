@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { Book, Menu, X, Radio } from "lucide-react";
+import { Menu, X, Radio } from "lucide-react";
+import ChurchEmblem from "@/components/ChurchEmblem";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [logoError, setLogoError] = useState(false);
 
   const navLinks = [
     { label: "Início", href: "#inicio" },
@@ -22,25 +22,11 @@ export default function Navbar() {
 
   return (
     <header className={styles.header}>
-      <div className={`container ${styles.navContainer}`}>
+      <div className={styles.navContainer}>
         {/* LOGO & IDENTIDADE ICE COHATRAC */}
         <a href="#inicio" className={styles.logoLink} aria-label="Página Inicial - ICE Cohatrac">
           <div className={styles.logoBadge}>
-            {!logoError ? (
-              /* eslint-disable-next-line @next/next/no-img-element */
-              <img
-                src="/assets/img/logo-ice-cohatrac.png"
-                alt="Logo ICE Cohatrac"
-                className={styles.logoImg}
-                onError={() => setLogoError(true)}
-              />
-            ) : null}
-
-            {logoError && (
-              <div className={styles.fallbackLogo} title="ICE Cohatrac">
-                <Book className={styles.bibleIcon} size={22} />
-              </div>
-            )}
+            <ChurchEmblem size={40} />
           </div>
 
           <div className={styles.brandInfo}>
@@ -49,7 +35,7 @@ export default function Navbar() {
           </div>
         </a>
 
-        {/* Links Desktop */}
+        {/* Links Desktop — Bem Espaçados e Formatados */}
         <nav className={styles.desktopNav} aria-label="Navegação principal">
           {navLinks.map((link) => (
             <a key={link.href} href={link.href} className={styles.navLink}>
@@ -58,9 +44,9 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* CTA Topo: Ao Vivo / Cultos */}
+        {/* CTA Topo: Cultos Online */}
         <div className={styles.headerActions}>
-          <a href="#sermoes" className={styles.liveButton}>
+          <a href="#sermoes" className={styles.liveButton} aria-label="Assistir Cultos Online">
             <span className="pulse-dot"></span>
             <Radio size={15} />
             <span>Cultos Online</span>
