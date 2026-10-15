@@ -7,24 +7,26 @@
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--ice-border);
   box-shadow: 0 2px 8px rgba(11, 29, 51, 0.05);
+  width: 100%;
 }
 
 .navContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
-  height: 4.85rem;
-  max-width: 1400px;
+  gap: 0.75rem;
+  height: 4.65rem;
+  max-width: 1360px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
   width: 100%;
+  box-sizing: border-box;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   .navContainer {
-    padding: 0 2.25rem;
-    gap: 2rem;
+    padding: 0 1.75rem;
+    gap: 1.25rem;
   }
 }
 
@@ -32,7 +34,7 @@
 .logoLink {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.75rem;
   text-decoration: none;
   flex-shrink: 0;
 }
@@ -41,8 +43,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.85rem;
-  height: 2.85rem;
+  width: 2.65rem;
+  height: 2.65rem;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
@@ -51,7 +53,7 @@
 }
 
 .logoLink:hover .logoBadge {
-  transform: translateY(-1px) scale(1.04);
+  transform: translateY(-1px) scale(1.05);
 }
 
 .brandInfo {
@@ -62,7 +64,7 @@
 .brandTitle {
   font-family: var(--font-serif);
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   letter-spacing: -0.015em;
   color: var(--ice-navy);
   line-height: 1.15;
@@ -74,26 +76,34 @@
 }
 
 .brandSubtitle {
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.06em;
   color: var(--ice-gold-hover);
   font-weight: 800;
-  margin-top: 0.2rem;
+  margin-top: 0.15rem;
   background-color: var(--ice-gold-light);
   border: 1px solid var(--ice-gold-border);
-  padding: 0.12rem 0.5rem;
+  padding: 0.1rem 0.45rem;
   border-radius: 9999px;
   align-self: flex-start;
+  white-space: nowrap;
 }
 
-/* Desktop Navigation — Bem Formatada e Espaçada */
+@media (max-width: 1140px) {
+  .brandSubtitle {
+    display: none;
+  }
+}
+
+/* Desktop Navigation com Flexbox Fluido e Responsivo */
 .desktopNav {
   display: none;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.2rem;
   flex: 1;
   justify-content: center;
+  min-width: 0;
 }
 
 @media (min-width: 1024px) {
@@ -104,26 +114,27 @@
 
 @media (min-width: 1280px) {
   .desktopNav {
-    gap: 0.5rem;
+    gap: 0.35rem;
   }
 }
 
 .navLink {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--ice-text-dark);
-  padding: 0.45rem 0.75rem;
+  padding: 0.4rem 0.55rem;
   border-radius: var(--radius-sm);
   transition: all 0.2s ease;
   white-space: nowrap;
   letter-spacing: -0.01em;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 @media (max-width: 1200px) and (min-width: 1024px) {
   .navLink {
-    font-size: 0.82rem;
-    padding: 0.4rem 0.5rem;
+    font-size: 0.775rem;
+    padding: 0.35rem 0.425rem;
   }
 }
 
@@ -133,36 +144,55 @@
   transform: translateY(-1px);
 }
 
-/* Ações Topo */
+/* Ações Topo (Sempre contidas na tela, sem overflow) */
 .headerActions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
   flex-shrink: 0;
 }
 
-.liveButton {
+.actionButton {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.55rem 1.15rem;
-  font-size: 0.85rem;
+  gap: 0.45rem;
+  padding: 0.48rem 0.95rem;
+  font-size: 0.825rem;
   font-weight: 700;
-  color: var(--ice-navy);
-  background-color: var(--ice-gold-light);
-  border: 1.5px solid var(--ice-gold-border);
   border-radius: 9999px;
   transition: all 0.2s ease;
   text-decoration: none;
-  box-shadow: 0 1px 3px rgba(198, 146, 44, 0.1);
   white-space: nowrap;
 }
 
-.liveButton:hover {
+/* Estado Normal (Sem culto ao vivo no momento - calmo e institucional) */
+.calmButton {
+  color: var(--ice-navy);
+  background-color: var(--ice-bg-page);
+  border: 1px solid var(--ice-border);
+}
+
+.calmButton:hover {
+  background-color: var(--ice-blue-subtle);
+  border-color: var(--ice-blue-accent);
+  color: var(--ice-blue-accent);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Estado Ativo: Quando o culto estiver acontecendo AO VIVO */
+.liveActiveBtn {
+  color: var(--ice-navy);
+  background-color: var(--ice-gold-light);
+  border: 1.5px solid var(--ice-gold-border);
+  box-shadow: 0 1px 4px rgba(198, 146, 44, 0.2);
+}
+
+.liveActiveBtn:hover {
   background-color: var(--ice-gold);
   color: #FFFFFF;
   border-color: var(--ice-gold);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   box-shadow: var(--shadow-gold);
 }
 
@@ -170,7 +200,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem;
+  padding: 0.45rem;
   border: 1px solid var(--ice-border);
   border-radius: var(--radius-sm);
   background: transparent;

@@ -8,10 +8,11 @@ Este documento registra todas as correções estruturais, doutrinárias, de lide
 
 - **Arquitetura 100% Flexbox:**
   - Todas as seções e cartões estruturados em Flexbox fluido (`display: flex; flex-wrap: wrap; align-items: stretch; gap: ...`), garantindo perfeita adaptação a celulares, tablets e desktops ultrawide.
-- **Cabeçalho Superior (Navbar) Formatado e Espaçado:**
-  - Altura expandida para `4.85rem` com container amplo (`max-width: 1400px; padding: 0 2.25rem`).
+- **Cabeçalho Superior (Navbar) Formatado, Espaçado e Sem Overflow:**
+  - Container com largura responsiva fluida (`max-width: 1360px; padding: 0 1.25rem`), garantindo que o botão e os links fiquem 100% contidos na tela em notebooks e monitores de qualquer resolução (sem corte à direita).
   - Emblema oficial circular da igreja (cruz branca e vitral nas cores azul, amarelo e verde sobre fundo marinho).
-  - Links com formato soft-pill, transições suaves, tipografia refinada e botão de destaque para os cultos online.
+  - Links com formato soft-pill, proporção equilibrada e transições suaves.
+  - **Detecção Real de Transmissão Ao Vivo:** O botão e o indicador vermelho pulsante só ficam ativos quando o culto estiver de fato acontecendo (Domingo das 18h30 às 20h30). Fora desses horários, o botão permanece em modo institucional sóbrio ("Cultos & Vídeos"), direcionando para os vídeos do YouTube sem alarmes visuais falsos.
 - **Confissão de Fé da AICEB em Gavetas (Accordions):**
   - Implementação integral dos 11 Capítulos da Confissão de Fé da AICEB (aprovada em novembro de 2024 na Convenção Geral Extraordinária em São Luís - MA).
   - Formato de "gavetas" interativas com numeração romana, títulos em destaque, artigos individuais doutrinários ("Cremos, confessamos e ensinamos...") e blocos de referências bíblicas detalhadas.
