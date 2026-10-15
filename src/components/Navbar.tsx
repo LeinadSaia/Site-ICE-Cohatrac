@@ -83,7 +83,7 @@ export default function Navbar() {
           {isLive ? (
             <a
               href="#sermoes"
-              className={`${styles.actionButton} ${styles.liveActiveBtn}`}
+              className={`${styles.headerActionButton} ${styles.liveActiveBtn}`}
               aria-label="Culto Ao Vivo Agora na ICE Cohatrac"
             >
               <span className="pulse-dot"></span>
@@ -93,7 +93,7 @@ export default function Navbar() {
           ) : (
             <a
               href="#sermoes"
-              className={`${styles.actionButton} ${styles.calmButton}`}
+              className={`${styles.headerActionButton} ${styles.calmButton}`}
               aria-label="Ver mensagens e transmissões no YouTube"
             >
               <YoutubeIcon size={16} />
@@ -101,57 +101,64 @@ export default function Navbar() {
             </a>
           )}
 
-          {/* Botão Menu Mobile */}
+          {/* Botão Menu Mobile (Três Barrinhas) */}
           <button
             type="button"
             className={styles.mobileMenuButton}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+            aria-label={mobileMenuOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"}
             aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Menu Mobile Drawer */}
+      {/* Backdrop e Menu Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className={styles.mobileDrawer}>
-          <div className="container">
-            <nav className={styles.mobileNav}>
-              {navLinks.map((link) => (
+        <>
+          <div
+            className={styles.backdrop}
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+          <div className={styles.mobileDrawer} role="dialog" aria-modal="true">
+            <div className="container">
+              <nav className={styles.mobileNav}>
+                {navLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className={styles.mobileNavLink}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ))}
                 <a
-                  key={link.href}
-                  href={link.href}
-                  className={styles.mobileNavLink}
+                  href="#sermoes"
+                  className={`${styles.drawerActionButton} ${
+                    isLive ? styles.liveActiveBtn : styles.calmButton
+                  }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {link.label}
+                  {isLive ? (
+                    <>
+                      <span className="pulse-dot"></span>
+                      <Radio size={15} />
+                      <span>Ao Vivo Agora</span>
+                    </>
+                  ) : (
+                    <>
+                      <YoutubeIcon size={18} />
+                      <span>Assistir Cultos no YouTube</span>
+                    </>
+                  )}
                 </a>
-              ))}
-              <a
-                href="#sermoes"
-                className={`${styles.actionButton} ${
-                  isLive ? styles.liveActiveBtn : styles.calmButton
-                } ${styles.mobileLiveButton}`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {isLive ? (
-                  <>
-                    <span className="pulse-dot"></span>
-                    <Radio size={15} />
-                    <span>Ao Vivo Agora</span>
-                  </>
-                ) : (
-                  <>
-                    <YoutubeIcon size={18} />
-                    <span>Assistir Cultos no YouTube</span>
-                  </>
-                )}
-              </a>
-            </nav>
+              </nav>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   );

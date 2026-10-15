@@ -188,7 +188,7 @@
   flex-shrink: 0;
 }
 
-.actionButton {
+.headerActionButton {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -202,7 +202,7 @@
 }
 
 @media (max-width: 640px) {
-  .actionButton {
+  .headerActionButton {
     display: none;
   }
 }
@@ -238,23 +238,35 @@
   box-shadow: var(--shadow-gold);
 }
 
+/* Botão Menu Mobile (Três Barrinhas) — Acessível, com alta prioridade de toque e z-index garantido */
 .mobileMenuButton {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem;
-  border: 1px solid var(--ice-border);
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 1.5px solid var(--ice-border);
   border-radius: var(--radius-sm);
-  background: transparent;
+  background-color: var(--ice-bg-page);
   color: var(--ice-navy);
   cursor: pointer;
   transition: all 0.2s ease;
   flex-shrink: 0;
+  position: relative;
+  z-index: 10001;
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.mobileMenuButton:hover {
+.mobileMenuButton:hover,
+.mobileMenuButton:active {
   background-color: var(--ice-blue-subtle);
   color: var(--ice-blue-accent);
+  border-color: var(--ice-blue-accent);
 }
 
 @media (min-width: 1024px) {
@@ -263,26 +275,63 @@
   }
 }
 
-/* Mobile Drawer */
-.mobileDrawer {
-  position: absolute;
-  top: 100%;
+/* Backdrop Escurecido Suave */
+.backdrop {
+  position: fixed;
+  top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(11, 29, 51, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 9998;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Mobile Drawer — Fixado abaixo do Header */
+.mobileDrawer {
+  position: fixed;
+  top: 4.65rem;
+  left: 0;
+  right: 0;
   width: 100%;
   max-width: 100vw;
   box-sizing: border-box;
   background-color: #FFFFFF;
   border-bottom: 3px solid var(--ice-gold);
-  box-shadow: var(--shadow-lg);
-  padding: 1.25rem 1rem 1.75rem 1rem;
-  animation: fadeIn 0.25s ease-out;
+  box-shadow: 0 16px 32px rgba(11, 29, 51, 0.2);
+  padding: 1.25rem 1rem 2rem 1rem;
+  animation: slideDown 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   overflow-y: auto;
-  max-height: calc(100vh - 4.5rem);
+  max-height: calc(100vh - 4.65rem);
+  z-index: 9999;
+}
+
+@media (max-width: 480px) {
+  .mobileDrawer {
+    top: 4.25rem;
+    max-height: calc(100vh - 4.25rem);
+  }
 }
 
 @media (min-width: 1024px) {
-  .mobileDrawer {
-    display: none;
+  .mobileDrawer,
+  .backdrop {
+    display: none !important;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -293,24 +342,35 @@
 }
 
 .mobileNavLink {
-  padding: 0.75rem 0.75rem;
-  font-size: 0.95rem;
+  padding: 0.8rem 0.85rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--ice-navy);
   border-radius: var(--radius-sm);
   border-bottom: 1px solid var(--ice-bg-page);
   transition: all 0.2s ease;
   text-decoration: none;
+  display: block;
 }
 
-.mobileNavLink:hover {
+.mobileNavLink:hover,
+.mobileNavLink:active {
   background-color: var(--ice-blue-subtle);
   color: var(--ice-blue-accent);
-  padding-left: 1rem;
+  padding-left: 1.15rem;
 }
 
-.mobileLiveButton {
-  margin-top: 1rem;
+.drawerActionButton {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  padding: 0.85rem;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  margin-top: 1rem;
+  text-decoration: none;
+  width: 100%;
+  box-sizing: border-box;
 }
