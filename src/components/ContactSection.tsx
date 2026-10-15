@@ -1,13 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import { MapPin, Navigation, Copy, Check, Clock, ExternalLink } from "lucide-react";
+import { MapPin, Navigation, Copy, Check, Clock, ExternalLink, Lock, RotateCcw } from "lucide-react";
 import { YoutubeIcon, InstagramIcon } from "@/components/icons/SocialIcons";
 import { CHURCH_DATA } from "@/data/churchData";
 import styles from "./ContactSection.module.css";
 
 export default function ContactSection() {
   const [copiedAddress, setCopiedAddress] = useState(false);
+  const [mapRevision, setMapRevision] = useState(0);
+  const [isMapInteracting, setIsMapInteracting] = useState(false);
 
   const fullAddressText = `${CHURCH_DATA.address.street}, ${CHURCH_DATA.address.neighborhood}, ${CHURCH_DATA.address.city} - ${CHURCH_DATA.address.state}, CEP: ${CHURCH_DATA.address.cep}`;
 
@@ -15,6 +17,11 @@ export default function ContactSection() {
     navigator.clipboard.writeText(fullAddressText);
     setCopiedAddress(true);
     setTimeout(() => setCopiedAddress(false), 3000);
+  };
+
+  const handleResetMap = () => {
+    setMapRevision((prev) => prev + 1);
+    setIsMapInteracting(false);
   };
 
   return (
@@ -165,18 +172,34 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Coluna 2: Mapa Interativo do Google Maps */}
+          {/* Coluna 2: Mapa Interativo do Google Maps Travado na Igreja */}
           <div className={styles.mapCard}>
             <div className={styles.mapTopBar}>
-              <span className={styles.mapBadge}>
-                <span className="pulse-dot"></span>
-                ICE Cohatrac no Google Maps
-              </span>
-              <span className={styles.mapRating}>{CHURCH_DATA.rating}</span>
+              <div className={styles.mapBadgeGroup}>
+                <span className={styles.mapBadge}>
+                  <span className="pulse-dot"></span>
+                  ICE Cohatrac no Google Maps
+                </span>
+                <span className={styles.mapLockedTag}>
+                  <Lock size={12} />
+                  Fixado na Igreja
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={handleResetMap}
+                className={styles.recenterBtn}
+                title="Travar e recentralizar na ICE Cohatrac"
+                aria-label="Recentralizar na igreja"
+              >
+                <RotateCcw size={13} />
+                <span>Travar na Igreja</span>
+              </button>
             </div>
 
             <div className={styles.mapContainer}>
               <iframe
+                key={mapRevision}
                 title="Localização da Igreja Cristã Evangélica em Cohatrac no Google Maps"
                 src={CHURCH_DATA.address.embedUrl}
                 width="100%"
@@ -185,14 +208,42 @@ export default function ContactSection() {
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className={styles.mapIframe}
+                className={`${styles.mapIframe} ${!isMapInteracting ? styles.mapLockedIframe : ""}`}
               ></iframe>
+
+              {!isMapInteracting && (
+                <div
+                  className={styles.mapLockOverlay}
+                  onClick={() => setIsMapInteracting(true)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") setIsMapInteracting(true);
+                  }}
+                  aria-label="Toque para interagir e navegar no mapa"
+                >
+                  <div className={styles.lockMessage}>
+                    <Lock size={16} className={styles.lockIcon} />
+                    <span className={styles.lockTitle}>Localização travada na ICE Cohatrac</span>
+                    <span className={styles.lockHint}>Toque para navegar livremente</span>
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className={styles.mapBottomTip}>
               <p>
                 <strong>Dica de Chegada:</strong> A igreja está situada em via tranquila e residencial, com facilidade de estacionamento nas proximidades e acesso rápido pelas principais avenidas do Cohatrac.
               </p>
+              <a
+                href={CHURCH_DATA.address.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.openInMapsLink}
+              >
+                <Navigation size={14} />
+                <span>Abrir Rota no Google Maps</span>
+              </a>
             </div>
           </div>
         </div>

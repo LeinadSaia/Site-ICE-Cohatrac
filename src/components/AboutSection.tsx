@@ -99,6 +99,27 @@ export default function AboutSection() {
             </div>
           </div>
         </div>
+
+        {/* Banner Panorâmico Oficial da Família ICE Cohatrac */}
+        <div className={styles.familyBannerWrapper}>
+          <div className={styles.bannerFrame}>
+            <img
+              src="/assets/img/banner-ice-familia.png"
+              alt="Família da Igreja Cristã Evangélica em Cohatrac reunida em amor e comunhão diante do templo"
+              className={styles.bannerImg}
+            />
+          </div>
+          <div className={styles.bannerCaptionBar}>
+            <div className={styles.bannerTagGroup}>
+              <span className={styles.bannerBadge}>Uma Igreja Família</span>
+              <span className={styles.bannerSubtext}>Comunhão fraterna para todas as gerações</span>
+            </div>
+            <p className={styles.bannerVerse}>
+              “Oh! Quão bom e quão suave é que os irmãos vivam em união!”
+              <strong className={styles.bannerRef}> — Salmo 133:1</strong>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

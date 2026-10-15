@@ -30,6 +30,20 @@
   }
 }
 
+@media (max-width: 480px) {
+  .navContainer {
+    height: 4.25rem;
+    padding: 0 0.85rem;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .navContainer {
+    padding: 0 0.65rem;
+  }
+}
+
 /* Brand & Logo */
 .logoLink {
   display: flex;
@@ -37,6 +51,7 @@
   gap: 0.75rem;
   text-decoration: none;
   flex-shrink: 0;
+  min-width: 0;
 }
 
 .logoBadge {
@@ -52,6 +67,13 @@
   box-shadow: 0 2px 8px rgba(26, 40, 80, 0.18);
 }
 
+@media (max-width: 480px) {
+  .logoBadge {
+    width: 2.35rem;
+    height: 2.35rem;
+  }
+}
+
 .logoLink:hover .logoBadge {
   transform: translateY(-1px) scale(1.05);
 }
@@ -59,6 +81,7 @@
 .brandInfo {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .brandTitle {
@@ -69,6 +92,19 @@
   color: var(--ice-navy);
   line-height: 1.15;
   transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .brandTitle {
+    font-size: 1.025rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .brandTitle {
+    font-size: 0.925rem;
+  }
 }
 
 .logoLink:hover .brandTitle {
@@ -165,6 +201,12 @@
   white-space: nowrap;
 }
 
+@media (max-width: 640px) {
+  .actionButton {
+    display: none;
+  }
+}
+
 /* Estado Normal (Sem culto ao vivo no momento - calmo e institucional) */
 .calmButton {
   color: var(--ice-navy);
@@ -200,13 +242,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.45rem;
+  padding: 0.5rem;
   border: 1px solid var(--ice-border);
   border-radius: var(--radius-sm);
   background: transparent;
   color: var(--ice-navy);
   cursor: pointer;
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .mobileMenuButton:hover {
@@ -226,11 +269,15 @@
   top: 100%;
   left: 0;
   width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
   background-color: #FFFFFF;
   border-bottom: 3px solid var(--ice-gold);
   box-shadow: var(--shadow-lg);
-  padding: 1.25rem 0 1.75rem 0;
+  padding: 1.25rem 1rem 1.75rem 1rem;
   animation: fadeIn 0.25s ease-out;
+  overflow-y: auto;
+  max-height: calc(100vh - 4.5rem);
 }
 
 @media (min-width: 1024px) {

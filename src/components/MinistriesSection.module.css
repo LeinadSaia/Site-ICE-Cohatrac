@@ -12,6 +12,7 @@
 .ministryCard {
   flex: 1 1 320px;
   max-width: 375px;
+  min-width: 0;
   background-color: #FFFFFF;
   border: 1px solid var(--ice-border);
   border-radius: var(--radius-md);
@@ -20,6 +21,14 @@
   flex-direction: column;
   transition: all 0.25s ease;
   box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 480px) {
+  .ministryCard {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 1.25rem 1rem;
+  }
 }
 
 .ministryCard:hover {
