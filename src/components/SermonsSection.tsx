@@ -1,12 +1,47 @@
 "use client";
 
-import React, { useState } from "react";
-import { Play, Tv, ExternalLink, User, Calendar, CheckCircle2 } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Play, Tv, ExternalLink, User, Calendar, CheckCircle2, Radio } from "lucide-react";
 import { CHURCH_DATA, SermonVideo } from "@/data/churchData";
 import styles from "./SermonsSection.module.css";
 
 export default function SermonsSection() {
+  const [videoList, setVideoList] = useState<SermonVideo[]>(CHURCH_DATA.sermons);
   const [activeVideo, setActiveVideo] = useState<SermonVideo>(CHURCH_DATA.sermons[0]);
+  const [isCurrentlyLive, setIsCurrentlyLive] = useState<boolean>(false);
+
+  // Busca dinamicamente as últimas transmissões e status ao vivo da API oficial
+  useEffect(() => {
+    let isMounted = true;
+
+    async function loadLatestBroadcasts() {
+      try {
+        const res = await fetch("/api/transmissoes");
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!isMounted) return;
+
+        if (Array.isArray(data.videos) && data.videos.length > 0) {
+          setVideoList(data.videos);
+          setActiveVideo(data.videos[0]);
+        }
+        if (typeof data.isLive === "boolean") {
+          setIsCurrentlyLive(data.isLive);
+        }
+      } catch {
+        // Mantém fallback seguro de CHURCH_DATA.sermons
+      }
+    }
+
+    loadLatestBroadcasts();
+
+    // Atualiza periodicamente a cada 5 minutos
+    const interval = setInterval(loadLatestBroadcasts, 300000);
+    return () => {
+      isMounted = false;
+      clearInterval(interval);
+    };
+  }, []);
 
   return (
     <section id="sermoes" className={`section section-navy ${styles.sermonsSection}`}>
@@ -40,10 +75,18 @@ export default function SermonsSection() {
 
             <div className={styles.videoDetails}>
               <div className={styles.detailsTop}>
-                <span className={styles.activeBadge}>
-                  <CheckCircle2 size={13} />
-                  Em Reprodução
-                </span>
+                {isCurrentlyLive && activeVideo.youtubeId === videoList[0]?.youtubeId ? (
+                  <span className={`${styles.activeBadge} ${styles.liveBadgeHighlight}`}>
+                    <span className="pulse-dot"></span>
+                    <Radio size={13} />
+                    Culto Ao Vivo Agora
+                  </span>
+                ) : (
+                  <span className={styles.activeBadge}>
+                    <CheckCircle2 size={13} />
+                    Em Reprodução
+                  </span>
+                )}
                 {activeVideo.duration && (
                   <span className={styles.durationTag}>{activeVideo.duration}</span>
                 )}
@@ -66,7 +109,7 @@ export default function SermonsSection() {
             </div>
           </div>
 
-          {/* Coluna 2: Seletor de Transmissões */}
+          {/* Coluna 2: Seletor de Transmissões Recentes */}
           <div className={styles.playlistCol}>
             <div className={styles.playlistHeader}>
               <h4>Transmissões Recentes</h4>
@@ -74,22 +117,33 @@ export default function SermonsSection() {
             </div>
 
             <div className={styles.videoList}>
-              {CHURCH_DATA.sermons.map((video) => {
+              {videoList.map((video, idx) => {
                 const isSelected = activeVideo.youtubeId === video.youtubeId;
+                const isFirstLive = idx === 0 && isCurrentlyLive;
                 return (
                   <button
-                    key={video.id}
+                    key={video.id || video.youtubeId}
                     type="button"
                     onClick={() => setActiveVideo(video)}
                     className={`${styles.videoBtn} ${isSelected ? styles.cardActive : ""}`}
                   >
                     <div className={styles.thumbnailBox}>
-                      <Play size={16} fill="currentColor" />
+                      {isFirstLive ? (
+                        <Radio size={16} color="#EF4444" />
+                      ) : (
+                        <Play size={16} fill="currentColor" />
+                      )}
                     </div>
 
                     <div className={styles.videoBtnInfo}>
-                      <span className={styles.btnTitle}>{video.title}</span>
-                      <span className={styles.btnPreacher}>{video.preacher}</span>
+                      <span className={styles.btnTitle}>
+                        {isFirstLive ? "🔴 [AO VIVO] " : ""}
+                        {video.title}
+                      </span>
+                      <span className={styles.btnPreacher}>
+                        {video.date ? `${video.date} • ` : ""}
+                        {video.preacher}
+                      </span>
                     </div>
                   </button>
                 );
