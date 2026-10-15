@@ -2,70 +2,75 @@
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.4-black?logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)](https://www.typescriptlang.org/)
-[![AICEB](https://img.shields.io/badge/Denomina%C3%A7%C3%A3o-AICEB-navy)](https://aiceb.com.br/)
+[![Denominação](https://img.shields.io/badge/Denomina%C3%A7%C3%A3o-AICEB-navy)](https://aiceb.com.br/)
 [![Status](https://img.shields.io/badge/Status-Produ%C3%A7%C3%A3o%20Pronta-emerald)](#)
 
-Portal institucional e aplicação web dinâmica da **Igreja Cristã Evangélica em Cohatrac (ICE Cohatrac)**, localizada em São Luís - MA. O projeto foi construído em **Next.js com App Router**, com design sóbrio, reverente e de alta qualidade visual, alinhado à identidade histórica e reformada da denominação (**AICEB** — fundada em 1947 no Maranhão).
+Portal institucional e aplicação web dinâmica da **Igreja Cristã Evangélica em Cohatrac (ICE Cohatrac)**, situada em São Luís - MA. Desenvolvido em **Next.js com App Router**, com design sóbrio, reverente e de padrão internacional, perfeitamente alinhado à herança histórica e reformada da denominação (**AICEB** — fundada em 1947 no Maranhão).
 
 ---
 
 ## 📋 Sumário
 1. [Visão Geral & Recursos](#-visão-geral--recursos)
 2. [Estrutura do Projeto](#-estrutura-do-projeto)
-3. [Execução em Desenvolvimento Local](#-execução-em-desenvolvimento-local)
-4. [Guia de Deploy no Linux com Apache (Passo a Passo)](#-guia-de-deploy-no-linux-com-apache-passo-a-passo)
-   - [Opção 1: Serviço Systemd (Inicialização Automática no Boot)](#1-serviço-systemd-recomendado-para-linux)
-   - [Opção 2: Gerenciador de Processos PM2](#2-opção-alternativa-pm2)
-   - [Configuração do Apache 2.4 como Reverse Proxy](#3-configuração-do-apache-24-reverse-proxy)
-   - [Certificado SSL HTTPS Gratuito (Certbot / Let's Encrypt)](#4-certificado-ssl-https-gratuito-certbot--lets-encrypt)
-5. [Scripts de Automação Incluídos](#-scripts-de-automação-incluídos)
-6. [Personalização de Imagens & Logos](#-personalização-de-imagens--logos)
-7. [Dados Institucionais](#-dados-institucionais)
+3. [Deploy Automatizado na VM Linux (Recomendado)](#-deploy-automatizado-na-vm-linux-em-1-comando)
+4. [Atualização Contínua em Produção](#-atualização-contínua-em-produção)
+5. [Execução em Desenvolvimento Local](#-execução-em-desenvolvimento-local)
+6. [Configurações Manuais do Apache & Systemd](#-configurações-manuais-do-apache--systemd)
+7. [Personalização de Imagens & Logos](#-personalização-de-imagens--logos)
+8. [Dados Institucionais](#-dados-institucionais)
 
 ---
 
 ## 🌟 Visão Geral & Recursos
 
-- **Aplicação Completa em Next.js:** Rápida, dinâmica, acessível e otimizada para SEO local em São Luís - MA.
-- **Identidade Visual Fiel:** Paleta oficial baseada nas cores da igreja e da AICEB (Azul Marinho `#0A1E36` / `#12385F`, Azul Royal `#1D5B9B`, Dourado Sóbrio `#C89B3C` e superfícies limpas).
+- **Tecnologia Moderna:** Next.js 16 (App Router), React 19, TypeScript e CSS Modules com variáveis semânticas centralizadas.
+- **Identidade Visual Sóbria e Nobre:** Paleta oficial baseada nas cores da igreja e da AICEB (Azul Noturno `#0A1E36`, Azul Royal `#1D5B9B`, Dourado Litúrgico `#C89B3C` e superfícies contrastantes).
+- **100% Responsivo:** Menu hamburger com drawer lateral animado, sem overflow horizontal em telas pequenas (desde 320px até 4K).
 - **11 Seções Institucionais Completas:**
-  1. **Navbar Fixa:** Logo com fallback inteligente, menu responsivo mobile e indicador pulsante de transmissão ao vivo.
-  2. **Hero:** Apresentação solene, lema bíblico, botões de ação e barra rápida de horários.
-  3. **Sobre Nós:** História da fundação em 2002, filiação histórica à AICEB, selo institucional e estatísticas.
-  4. **No Que Cremos:** Cards imponentes dos *Cinco Solas da Reforma* e Accordion interativo com a *Confissão de Fé da AICEB*.
-  5. **Liderança:** Corpo pastoral (Pr. Madson Oliveira, Pr. Mário Rúbens, Ev. Daniel) e governo eclesiástico (Presbitério e Junta Diaconal).
-  6. **Ministérios:** 6 departamentos (EBD, Coral/Louvor, Ministério Infantil, Jovens/Adolescentes, Famílias e Missões).
-  7. **Programação Semanal:** Grade completa de cultos com destaque para os cultos de domingo e reuniões de oração.
-  8. **Sermões & Transmissões:** Player dinâmico interativo conectado às transmissões reais do canal oficial `@ICECOHATRAC` no YouTube (+750 vídeos).
-  9. **Dízimos & Ofertas:** Card de contribuição com versículo (2 Co 9:7), chave PIX oficial (CNPJ) com botão de cópia rápida em 1 clique (feedback visual) e espaço para QR Code.
-  10. **Contato, Oração & Visitas:** Formulário funcional com abas para *Pedidos de Oração* (com integração via API) e *Planejamento de Visitas*, além do mapa interativo do Google Maps no Cohatrac.
-  11. **Rodapé:** Dados jurídicos (CNPJ, razão social), links rápidos de navegação e redes oficiais.
+  1. **Navbar:** Logo oficial com fallback SVG, menu responsivo mobile e indicador dinâmico de culto ao vivo.
+  2. **Hero:** Apresentação solene da igreja, lema bíblico (*Soli Deo Gloria*), botões de ação e grade rápida de cultos.
+  3. **Sobre Nós:** História da fundação (2002), filiação à AICEB, selo institucional e valores da congregação.
+  4. **No Que Cremos:** Cards dos *Cinco Solas da Reforma* e Accordion interativo com a *Confissão de Fé da AICEB* (estruturada em tópicos doutrinários).
+  5. **Liderança:** Corpo pastoral (Pr. Madson Oliveira, Pr. Mário Rúbens, Ev. Daniel) e conselho eclesiástico (Presbitério e Diaconia).
+  6. **Ministérios:** Departamentos oficiais (EBD, Coral da ICE Cohatrac, Ministério Infantil - MCC, Jovens, Famílias e Missões).
+  7. **Programação Semanal:** Grade completa de cultos dominicais, oração e reuniões departamentais (Clube dos Homens, DLOM e Cadetes a Jato).
+  8. **Transmissões & Mensagens:** Integração em tempo real com o canal oficial do YouTube ([@ICECOHATRAC](https://www.youtube.com/@ICECOHATRAC)), detectando transmissões ao vivo ou exibindo os vídeos mais recentes com títulos originais do YouTube.
+  9. **Dízimos & Ofertas:** Card reverente com texto bíblico (2 Coríntios 9:7), chave PIX oficial da igreja (CNPJ) com cópia em 1 clique e feedback tátil/visual.
+  10. **Contato, Oração & Mapa:** 
+      - Formulários integrados via API para *Pedidos de Oração* e *Planejamento de Visitas*.
+      - Mapa do Google Maps **travado com precisão métrica no templo** na Rua 2100 (Parque Aurora / Cohatrac II), com botão de recentralização e rota direta.
+  11. **Rodapé Institucional:** Dados cadastrais (CNPJ, endereço completo), links institucionais, links rápidos e redes oficiais.
 
 ---
 
 ## 📂 Estrutura do Projeto
 
 ```text
-├── deploy/                           # Arquivos de infraestrutura e produção
+Site-ICE-Cohatrac/
+├── setup-vm.sh                       # 🚀 Script mestre de deploy automatizado em 1 comando na VM
+├── deploy.sh                         # 🔄 Script de atualização rápida (pull + build + restart)
+├── deploy/                           # Arquivos de infraestrutura de produção
 │   ├── apache-ice-cohatrac.conf      # VirtualHost do Apache 2.4 (Reverse Proxy + WebSockets)
 │   ├── ice-cohatrac.service          # Unit do Systemd para auto-start no boot do Linux
 │   └── ecosystem.config.js           # Configuração de cluster para PM2 (opcional)
-├── scripts/                          # Scripts de automação shell (.sh)
-│   ├── setup-apache.sh               # Instala e habilita o VirtualHost no Apache
-│   ├── install-service.sh            # Instala e inicializa o serviço systemd no Linux
-│   └── deploy.sh                     # Script de pull, build e restart automático
-├── public/                           # Arquivos públicos estáticos
-│   └── assets/img/                   # Pasta para imagens reais (logos, hero, qr code)
+├── scripts/                          # Scripts utilitários de suporte
+│   ├── deploy.sh                     # Rotina de deploy contínuo
+│   ├── setup-apache.sh               # Configuração rápida dos módulos Apache
+│   └── install-service.sh            # Instalação isolada da unit systemd
+├── public/                           # Arquivos estáticos servidos diretamente
+│   ├── assets/img/                   # Logos, banners e fotos da congregação
+│   └── icon.png                      # Favicon da aplicação
 ├── src/
 │   ├── app/
-│   │   ├── api/                      # Rotas de API dinâmicas
+│   │   ├── api/                      # Rotas de API dinâmicas do Next.js
 │   │   │   ├── pedidos-oracao/route.ts
+│   │   │   ├── transmissoes/route.ts # Busca automática de lives e vídeos do YouTube
 │   │   │   └── visitas/route.ts
-│   │   ├── globals.css               # Design System com tokens de cores e tipografia
-│   │   ├── layout.tsx                # Layout raiz com Schema.org Church e metadados SEO
-│   │   └── page.tsx                  # Montagem da página principal
-│   ├── components/                   # Componentes modulares da interface
-│   │   ├── icons/SocialIcons.tsx     # Ícones vetoriais SVG limpos
+│   │   ├── globals.css               # Design System global e tokens de tema
+│   │   ├── layout.tsx                # Layout raiz, SEO, OpenGraph e Schema.org
+│   │   └── page.tsx                  # Estrutura principal da página
+│   ├── components/                   # Componentes modulares reutilizáveis
+│   │   ├── icons/SocialIcons.tsx     # Ícones vetoriais SVG
 │   │   ├── Navbar.tsx
 │   │   ├── Hero.tsx
 │   │   ├── AboutSection.tsx
@@ -78,131 +83,106 @@ Portal institucional e aplicação web dinâmica da **Igreja Cristã Evangélica
 │   │   ├── ContactSection.tsx
 │   │   └── Footer.tsx
 │   └── data/
-│       └── churchData.ts             # Dados centralizados da igreja para fácil manutenção
+│       └── churchData.ts             # Base centralizada de dados da igreja
 ├── package.json
 └── tsconfig.json
 ```
 
 ---
 
-## 💻 Execução em Desenvolvimento Local
+## 🚀 Deploy Automatizado na VM Linux (Em 1 Comando)
 
-### Pré-requisitos
-- **Node.js** v20+ ou v24+
-- **NPM** ou **Bun**
+Criamos um assistente interativo em Bash (`setup-vm.sh`) que faz **toda a configuração da VM do zero**, sem que você precise configurar o Apache ou o systemd na mão:
 
-### 1. Clonar o repositório
-```bash
-git clone https://github.com/LeinadSaia/Site-ICE-Cohatrac.git
-cd Site-ICE-Cohatrac
-```
+### Como rodar na sua VM:
 
-### 2. Instalar dependências
-```bash
-npm install
-```
+1. Clone o repositório na sua máquina virtual (ou envie os arquivos):
+   ```bash
+   git clone https://github.com/LeinadSaia/Site-ICE-Cohatrac.git
+   cd Site-ICE-Cohatrac
+   ```
 
-### 3. Rodar o servidor de desenvolvimento
-```bash
-npm run dev
-```
-Acesse `http://localhost:3000` no seu navegador.
+2. Execute o assistente de deploy com `sudo`:
+   ```bash
+   sudo bash setup-vm.sh
+   ```
+
+### O que o script faz automaticamente por você:
+- 🔍 **Identificação e Instalação:** Verifica se o **Apache2** e o **Node.js LTS (20/22)** estão presentes; caso não estejam, instala-os automaticamente via repositórios oficiais.
+- 💬 **Assistente Interativo:** Pergunta qual é o **domínio ou IP** do seu servidor, a **porta interna** desejada e se deseja ativar o **SSL (HTTPS gratuito com Let's Encrypt / Certbot)**.
+- 🌐 **Configuração do Apache:** Ativa todos os módulos necessários (`proxy`, `proxy_http`, `proxy_wstunnel`, `rewrite`, `headers`, `deflate`), gera o VirtualHost otimizado e desativa a tela padrão do Apache (`000-default`).
+- 📦 **Compilação:** Executa `npm install` e `npm run build` gerando a versão de produção otimizada.
+- ⚙️ **Inicialização com Systemd:** Cria o serviço `ice-cohatrac.service`, ativa para iniciar junto com o boot da VM e inicia a aplicação.
+- 🔒 **Certificado SSL (Opcional):** Se solicitado, executa o Certbot e configura o redirecionamento automático de HTTP para HTTPS.
+- 🩺 **Teste de Saúde:** Testa a resposta local da aplicação e exibe o resumo completo com links e comandos de gerenciamento.
 
 ---
 
-## 🐧 Guia de Deploy no Linux com Apache (Passo a Passo)
+## 🔄 Atualização Contínua em Produção
 
-Para rodar a aplicação em um servidor Linux (Ubuntu, Debian ou similar) atrás do servidor web **Apache**:
+Após a primeira instalação, sempre que houver novas alterações ou commits no GitHub, basta entrar na pasta do projeto na VM e rodar:
 
-### 1. Serviço Systemd (Recomendado para Linux)
-O **systemd** garante que a aplicação seja iniciada automaticamente assim que o servidor Linux ligar ou reiniciar, e que seja reiniciada automaticamente caso ocorra alguma falha.
+```bash
+bash deploy.sh
+```
 
-Você pode instalar o serviço automaticamente com o script fornecido:
+O comando executará:
+1. `git pull origin main` (baixa as últimas alterações).
+2. `npm install` (atualiza eventuais dependências).
+3. `npm run build` (recompila o site).
+4. `sudo systemctl restart ice-cohatrac.service` (reinicia o serviço sem downtime perceptível).
+
+---
+
+## 💻 Execução em Desenvolvimento Local
+
+Caso deseje testar ou desenvolver novas funcionalidades na sua máquina local:
+
+### Pré-requisitos
+- Node.js 20+ ou 24+
+- NPM ou Bun
+
+```bash
+# 1. Instalar dependências
+npm install
+
+# 2. Rodar em modo de desenvolvimento
+npm run dev
+```
+
+Abra [http://localhost:3000](http://localhost:3000) no navegador.
+
+---
+
+## 🛠️ Configurações Manuais do Apache & Systemd
+
+Se você preferir executar as etapas separadamente em vez de usar o `setup-vm.sh`:
+
+### 1. Serviço Systemd (Manual)
+O arquivo de modelo está em `deploy/ice-cohatrac.service`. Para instalar via script dedicado:
 ```bash
 sudo bash scripts/install-service.sh
 ```
-
-Ou manualmente criando o arquivo `/etc/systemd/system/ice-cohatrac.service`:
-```ini
-[Unit]
-Description=Servico Web Next.js - Igreja Crista Evangelica em Cohatrac
-After=network.target
-
-[Service]
-Type=simple
-User=seu_usuario
-WorkingDirectory=/caminho/do/projeto/Site-ICE-Cohatrac
-Environment=NODE_ENV=production
-Environment=PORT=3000
-ExecStart=/usr/bin/npm run start
-Restart=always
-RestartSec=5s
-StandardOutput=journal
-StandardError=journal
-SyslogIdentifier=ice-cohatrac
-
-[Install]
-WantedBy=multi-user.target
-```
-
-Comandos para gerenciar o serviço:
+Ou comande diretamente:
 ```bash
-# Recarregar configurações do systemd
-sudo systemctl daemon-reload
-
-# Ativar para iniciar junto com o sistema (boot)
-sudo systemctl enable ice-cohatrac.service
-
-# Iniciar ou reiniciar
-sudo systemctl restart ice-cohatrac.service
-
-# Ver status do serviço
-sudo systemctl status ice-cohatrac.service
+# Ver status da aplicação
+sudo systemctl status ice-cohatrac
 
 # Acompanhar logs em tempo real
-sudo journalctl -u ice-cohatrac.service -f
+sudo journalctl -u ice-cohatrac -f
+
+# Reiniciar aplicação
+sudo systemctl restart ice-cohatrac
 ```
 
----
-
-### 2. Opção Alternativa: PM2
-Se você preferir utilizar o gerenciador de processos **PM2**:
-```bash
-# Instalar o PM2 globalmente
-npm install -g pm2
-
-# Iniciar o Next.js com o arquivo de ecossistema
-pm2 start ecosystem.config.js
-
-# Salvar lista para reinicialização no boot do Linux
-pm2 save
-pm2 startup
-```
-
----
-
-### 3. Configuração do Apache 2.4 (Reverse Proxy)
-
-O Apache receberá as requisições HTTP na porta 80 (ou HTTPS na porta 443) e as repassará internamente para o Next.js rodando na porta 3000.
-
-#### Passo 3.1: Habilitar os módulos necessários no Apache
-```bash
-sudo a2enmod proxy
-sudo a2enmod proxy_http
-sudo a2enmod proxy_wstunnel
-sudo a2enmod rewrite
-sudo a2enmod headers
-sudo a2enmod deflate
-```
-
-#### Passo 3.2: Copiar e ativar o VirtualHost
-Você pode rodar o script automático:
+### 2. VirtualHost do Apache (Manual)
+O arquivo de modelo está em `deploy/apache-ice-cohatrac.conf`. Para configurar:
 ```bash
 sudo bash scripts/setup-apache.sh
 ```
-
-Ou copiar manualmente o arquivo:
+Ou manualmente:
 ```bash
+sudo a2enmod proxy proxy_http proxy_wstunnel rewrite headers deflate
 sudo cp deploy/apache-ice-cohatrac.conf /etc/apache2/sites-available/ice-cohatrac.conf
 sudo a2ensite ice-cohatrac.conf
 sudo apache2ctl configtest
@@ -211,41 +191,14 @@ sudo systemctl reload apache2
 
 ---
 
-### 4. Certificado SSL HTTPS Gratuito (Certbot / Let's Encrypt)
-Para habilitar o cadeado de segurança verde HTTPS com certificado gratuito que renova sozinho:
-```bash
-# Instalar o Certbot com plugin Apache
-sudo apt update
-sudo apt install certbot python3-certbot-apache -y
-
-# Gerar e configurar o certificado automaticamente no Apache
-sudo certbot --apache -d icecohatrac.com.br -d www.icecohatrac.com.br
-```
-
----
-
-## ⚡ Scripts de Automação Incluídos
-
-| Script | Função | Como Executar |
-| :--- | :--- | :--- |
-| `scripts/setup-apache.sh` | Habilita os módulos proxy do Apache, copia o VirtualHost e recarrega o servidor. | `sudo bash scripts/setup-apache.sh` |
-| `scripts/install-service.sh` | Instala a unit do systemd, define o auto-start no boot do Linux e inicia a aplicação. | `sudo bash scripts/install-service.sh` |
-| `scripts/deploy.sh` | Baixa novidades do Git (`pull`), instala pacotes, roda `build` e reinicia o serviço. | `bash scripts/deploy.sh` |
-
----
-
 ## 🖼️ Personalização de Imagens & Logos
 
-O código foi arquitetado com **fallbacks inteligentes** em SVG. Isso significa que mesmo sem nenhuma imagem enviada, o site exibe ícones sagrados elegantes (cruz, Bíblia aberta e QR Code vetorial).
+O projeto possui **fallbacks visuais elegantes em SVG**. Isso significa que mesmo sem imagens customizadas na pasta, o site é 100% funcional e com estética limpa.
 
-Quando você quiser adicionar as imagens oficiais da igreja, basta colocá-las na pasta `public/assets/img/`:
-
-1. **Logo Principal:** `public/assets/img/logo-ice-cohatrac.png`
-   - Exibida na barra de navegação, na seção Sobre a Igreja e no Rodapé.
-2. **Foto de Fundo do Hero:** `public/assets/img/hero-bg.jpg`
-   - Foto do templo da igreja ou assembleia.
-3. **QR Code do PIX:** `public/assets/img/qrcode-pix-ice.png`
-   - Imagem do QR Code oficial gerada pelo banco da igreja.
+Para adicionar as imagens reais da igreja, salve-as em `public/assets/img/`:
+- **Logo da Igreja:** `public/assets/img/logo-ice-cohatrac.png`
+- **Banner / Foto do Templo:** `public/assets/img/banner-igreja.png` ou `public/assets/img/hero-bg.jpg`
+- **QR Code do PIX:** `public/assets/img/qrcode-pix-ice.png`
 
 ---
 
@@ -254,8 +207,9 @@ Quando você quiser adicionar as imagens oficiais da igreja, basta colocá-las n
 - **Razão Social:** Igreja Cristã Evangélica da AICEB em Cohatrac
 - **Nome Usual:** Igreja Cristã Evangélica em Cohatrac (ICE Cohatrac)
 - **Denominação:** Aliança das Igrejas Cristãs Evangélicas do Brasil (AICEB - 1947)
-- **CNPJ:** `05.349.364/0001-03` (Ativa desde 14/06/2002)
+- **CNPJ:** `05.349.364/0001-03`
 - **Endereço:** Rua Dois Mil e Cem (Rua 2100), Quadra 23, Nº 11 — Bairro Parque Aurora / Cohatrac, São Luís - MA, CEP `65051-856`
-- **YouTube Oficial:** [@ICECOHATRAC](https://www.youtube.com/@ICECOHATRAC) (+750 vídeos)
-- **Instagram:** [@icecohatrac](https://www.instagram.com/icecohatrac/)
+- **Coordenadas Exatas do Templo:** `-2.5374585, -44.2121065`
+- **YouTube Oficial:** [@ICECOHATRAC](https://www.youtube.com/@ICECOHATRAC)
+- **Instagram Oficial:** [@icecohatrac](https://www.instagram.com/icecohatrac/)
 - **Lema:** *Soli Deo Gloria — A Deus toda a glória.*
