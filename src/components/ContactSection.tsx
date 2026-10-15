@@ -127,7 +127,7 @@ export default function ContactSection() {
                 </div>
                 <div className={styles.scheduleRow}>
                   <strong className={styles.scheduleDay}>Sábado</strong>
-                  <span className={styles.scheduleEvent}>17h00 (Rede de Jovens • Quinzenal)</span>
+                  <span className={styles.scheduleEvent}>17h00 (Jovens • Quinzenal)</span>
                 </div>
               </div>
             </div>

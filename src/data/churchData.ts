@@ -111,7 +111,7 @@ export const CHURCH_DATA = {
     {
       day: "Sábado",
       time: "17h00 (Quinzenal)",
-      title: "Rede de Jovens",
+      title: "Jovens",
       description: "Encontros da mocidade com comunhão fraterna, estudos contextualizados e louvor."
     }
   ] as ScheduleItem[],
@@ -158,8 +158,8 @@ export const CHURCH_DATA = {
       icon: "BookOpen"
     },
     {
-      id: "louvor",
-      title: "Coral & Ministério de Louvor",
+      id: "coral",
+      title: "Coral da ICE Cohatrac",
       subtitle: "Música Sacra e Reverente",
       description: "Zelo pela rica hinologia cristã histórica, cânticos espirituais bíblicos e apresentações do tradicional Coral da ICE Cohatrac.",
       schedule: "Ensaios e cultos dominicais",
@@ -175,7 +175,7 @@ export const CHURCH_DATA = {
     },
     {
       id: "jovens",
-      title: "Rede de Jovens",
+      title: "Jovens",
       subtitle: "Comunhão e Vida Cristã",
       description: "Reuniões quinzenais aos sábados com estudos bíblicos, louvor e comunhão para os jovens cristãos.",
       schedule: "Sábados às 17h00 (Quinzenal)",
@@ -243,39 +243,45 @@ export const CHURCH_DATA = {
   sermons: [
     {
       id: "1",
-      title: "Culto Dominical - Noite (ICE Cohatrac)",
-      preacher: "Pr. Madson Oliveira",
-      date: "Culto Dominical Principal",
-      youtubeId: "3L0DSW--fr4",
-      passage: "Exposição Bíblica",
-      duration: "1h 45m"
+      title: "Culto Dominical - Noite (11/10/2026)",
+      preacher: "ICE Cohatrac Ao Vivo",
+      date: "Última Transmissão",
+      youtubeId: "AYFOmZ7a07g"
     },
     {
       id: "2",
-      title: "Culto Dominical de Adoração e Exposição Bíblica",
-      preacher: "Pastores da ICE Cohatrac",
-      date: "Celebração e Pregação",
-      youtubeId: "Sl9tlIdrvC0",
-      passage: "Palavra de Edificação",
-      duration: "1h 38m"
+      title: "Culto Dominical - Manhã (11/10/2026)",
+      preacher: "ICE Cohatrac Ao Vivo",
+      date: "EBD / Manhã",
+      youtubeId: "Rwyw5I6FIvQ"
     },
     {
       id: "3",
-      title: "Mensagem Dominical - ICE Cohatrac",
-      preacher: "Corpo Pastoral",
-      date: "Exposição das Escrituras",
-      youtubeId: "q2U4zBXyXI8",
-      passage: "Doutrina e Vida Cristã",
-      duration: "1h 30m"
+      title: "Culto Dominical -Noite (04/10/2026)",
+      preacher: "ICE Cohatrac Ao Vivo",
+      date: "Transmissão Anterior",
+      youtubeId: "3L0DSW--fr4"
     },
     {
       id: "4",
-      title: "Culto Dominical - Pregação da Palavra",
-      preacher: "Pastores da ICE Cohatrac",
-      date: "Ministração da Palavra",
-      youtubeId: "qaDEFSLCXqc",
-      passage: "Vida Cristã Prática",
-      duration: "1h 40m"
+      title: "Culto Dominical -Noite (27/09/2026)",
+      preacher: "ICE Cohatrac Ao Vivo",
+      date: "Transmissão Anterior",
+      youtubeId: "Sl9tlIdrvC0"
+    },
+    {
+      id: "5",
+      title: "Culto Dominical - Manhã (27/09/2026)",
+      preacher: "ICE Cohatrac Ao Vivo",
+      date: "Transmissão Anterior",
+      youtubeId: "hE1jY-XVSDM"
+    },
+    {
+      id: "6",
+      title: "Culto Dominical - Noite(20/09/2026)",
+      preacher: "ICE Cohatrac Ao Vivo",
+      date: "Transmissão Anterior",
+      youtubeId: "TZIIqreXZDs"
     }
   ] as SermonVideo[]
 };

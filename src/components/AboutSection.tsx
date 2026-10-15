@@ -30,8 +30,8 @@ export default function AboutSection() {
 
             <p className={styles.bodyText}>
               Aqui você encontra acolhimento para todas as idades: desde os pequenos no MCC
-              (Ministério Crescer com Cristo), aos adolescentes nos Cadetes a Jato, à mocidade
-              na Rede de Jovens, aos homens no Clube dos Homens e às mulheres no DLOM.
+              (Ministério Crescer com Cristo), aos adolescentes nos Cadetes a Jato, aos Jovens,
+              aos homens no Clube dos Homens e às mulheres no DLOM.
             </p>
 
             {/* Informação Institucional */}

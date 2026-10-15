@@ -44,7 +44,9 @@ export default function SermonsSection() {
                   <CheckCircle2 size={13} />
                   Em Reprodução
                 </span>
-                <span className={styles.durationTag}>{activeVideo.duration}</span>
+                {activeVideo.duration && (
+                  <span className={styles.durationTag}>{activeVideo.duration}</span>
+                )}
               </div>
 
               <h3 className={styles.activeTitle}>{activeVideo.title}</h3>
@@ -54,10 +56,12 @@ export default function SermonsSection() {
                   <User size={14} />
                   <span>{activeVideo.preacher}</span>
                 </div>
-                <div className={styles.metaItem}>
-                  <Calendar size={14} />
-                  <span>{activeVideo.date}</span>
-                </div>
+                {activeVideo.date && (
+                  <div className={styles.metaItem}>
+                    <Calendar size={14} />
+                    <span>{activeVideo.date}</span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
