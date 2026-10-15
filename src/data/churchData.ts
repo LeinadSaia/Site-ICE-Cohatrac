@@ -58,8 +58,8 @@ export const CHURCH_DATA = {
     city: "São Luís",
     state: "MA",
     cep: "65051-856",
-    mapsUrl: "https://maps.google.com/?cid=2873994002996943705",
-    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.9529369527637!2d-44.2088825!3d-2.5222047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7f6920f670fa93f%3A0x27de7d0d0891d179!2sIgreja%20Crist%C3%A3%20Evang%C3%A9lica%20No%20Cohatrac!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=-2.5374585,-44.2121065",
+    embedUrl: "https://maps.google.com/maps?q=-2.5374585,-44.2121065+(Igreja+Crist%C3%A3+Evang%C3%A9lica+em+Cohatrac)&t=&z=18&ie=UTF8&iwloc=&output=embed"
   },
 
   socials: {
